@@ -16,3 +16,5 @@ https://vinotecaligier.com/
 ¿Quiénes somos?
 
 Nicolás Castellano: Realizador audiovisual y aprendiz de programador Full Stack
+
+Nahir Arrejoria: Traductora de Inglés.
