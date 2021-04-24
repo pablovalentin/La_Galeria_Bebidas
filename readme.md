@@ -18,3 +18,5 @@ https://vinotecaligier.com/
 Nicolás Castellano: Realizador audiovisual y aprendiz de programador Full Stack
 
 Nahir Arrejoria: Traductora de Inglés.
+
+Pablo Valentín: Analista programador, con experiencia en Cobol y Visual 5/6, buscando actualizarse!
