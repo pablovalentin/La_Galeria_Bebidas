@@ -13,3 +13,7 @@ https://www.valentinserrano.com/
 Web de referencia del cliente
 
 https://vinotecaligier.com/
+
+¿Quiénes somos?
+
+Nicolás Castellano: Realizador audiovisual y aprendiz de programador Full Stack
