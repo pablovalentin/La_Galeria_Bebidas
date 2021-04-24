@@ -5,7 +5,6 @@ Apuntando al publico conocedor y entusiasta del buen beber.
 Inspiración:
 https://www.bodegasbianchi.com.ar/
 https://www.vinosyspirits.com/
-https://vinotecaligier.com/
 https://lacavadedupont.com.ar/
 https://tienda.rutiniwines.com/
 https://www.valentinserrano.com/
