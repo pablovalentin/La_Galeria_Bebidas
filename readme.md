@@ -20,3 +20,8 @@ Nicolás Castellano: Realizador audiovisual y aprendiz de programador Full Stack
 Nahir Arrejoria: Traductora de Inglés.
 
 Pablo Valentín: Analista programador, con experiencia en Cobol y Visual 5/6, buscando actualizarse!
+
+Repositorios:
+
+Trello: https://trello.com/b/YMD3fHWV/proyecto-integrador
+Github: https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador
