@@ -24,4 +24,4 @@ Pablo Valentín: Analista programador, con experiencia en Cobol y Visual 5/6, bu
 Repositorios:
 
 Trello: https://trello.com/b/YMD3fHWV/proyecto-integrador
-Github: https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador
+Github: https://github.com/pablovalentin/La_Galeria_Bebidas

@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador.git"
+    "url": "git+https://github.com/pablovalentin/La_Galeria_Bebidas.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador/issues"
+    "url": "https://github.com/pablovalentin/La_Galeria_Bebidas/issues"
   },
-  "homepage": "https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador#readme",
+  "homepage": "https://github.com/pablovalentin/La_Galeria_Bebidas#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
