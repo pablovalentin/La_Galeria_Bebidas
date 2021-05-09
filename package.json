@@ -1,0 +1,22 @@
+{
+  "name": "lagaleriabebidas",
+  "version": "1.0.0",
+  "description": "\"La galeria bebidas\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador/issues"
+  },
+  "homepage": "https://github.com/pablovalentin/Grupo_3_ProyectoIntegrador#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
