@@ -1,0 +1,87 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Sanchez", serif;
+}
+
+.social-media {
+  display: none;
+}
+
+.button-links {
+  display: none;
+}
+
+.user-links ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.user-links li {
+  margin: 0.5em;
+  color: #484747;
+  font-size: 22px;
+}
+
+.burger-menu {
+  color: white;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  padding: 1px;
+  background-color: #484747;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 42px;
+}
+.promos {
+  width: 400px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.vinos-borde {
+  margin: 25px;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  background-color: rgb(204, 198, 198);
+  position: relative;
+  border-radius: 40px;
+}
+
+.coleccion {
+  font-size: 18px;
+  color: 484747;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.cepa {
+  font-size: 16px;
+  color: #484747;
+  margin: 1px;
+  text-align: center;
+  padding: 5px;
+}
+
+.precio {
+  font-size: 16px;
+  color: #484747;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.fa-cart-plus {
+  font-size: 30px;
+  color: white;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  text-align: center; /* Como corno lo meto en el medioooo!!!! */
+  padding: 5px;
+  margin-bottom: 10px;
+}
