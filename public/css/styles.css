@@ -8,7 +8,7 @@
 }
 a {
   text-decoration: none;
-  color: #484747
+  color: #484747;
 }
 .social-media {
   display: none;
@@ -97,7 +97,7 @@ a {
   margin-bottom: 4px;
 }
 .product-description {
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 
@@ -122,7 +122,7 @@ a {
 .dropdown-burger {
   position: relative;
   display: inline-block;
-  }
+}
 .div-burger {
   display: flex;
   justify-content: center;
@@ -133,7 +133,7 @@ a {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   font-size: 12px;
 }
@@ -146,23 +146,29 @@ a {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .dropdown:hover .dropbtn {
-  background-color: rgb(204, 198, 198); 
-  padding: 3px
+  background-color: rgb(204, 198, 198);
+  padding: 3px;
 }
 
-.dropdown-burger:hover .dropdown-content {display: block;}
+.dropdown-burger:hover .dropdown-content {
+  display: block;
+}
 
 .dropdown-burger:hover .dropbtn {
-  background-color: rgb(204, 198, 198); 
-  padding: 3px
+  background-color: rgb(204, 198, 198);
+  padding: 3px;
 }
 .more-products {
-  display: none
+  display: none;
 }
 
 /* estilo footer */
@@ -173,7 +179,7 @@ footer {
 }
 
 .logo-footer {
-  max-width: 20px;
+  max-width: 200px;
 }
 .social-media-footer ul {
   display: flex;
@@ -200,11 +206,11 @@ footer {
   color: white;
 }
 main {
-  margin-bottom: 34px
+  margin-bottom: 34px;
 }
-@media (min-width: 769px){
+@media (min-width: 769px) {
   .div-burger {
-    display: none
+    display: none;
   }
   .nav-bar {
     display: flex;
@@ -212,7 +218,6 @@ main {
     list-style: none;
     align-items: center;
     font-size: 20px;
-
   }
   .nav-bar li {
     padding: 5px;
@@ -223,23 +228,23 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  .vinos-borde{
-    width: 43%
+  .vinos-borde {
+    width: 43%;
   }
 }
-@media (min-width: 1280px){
-  .vinos-borde{
-    width: 21%
+@media (min-width: 1280px) {
+  .vinos-borde {
+    width: 21%;
   }
   .more-products {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  .nav-bar{
+  .nav-bar {
     font-size: 26px;
   }
-  .user-links li{
-    font-size: 28px
+  .user-links li {
+    font-size: 28px;
   }
 }
