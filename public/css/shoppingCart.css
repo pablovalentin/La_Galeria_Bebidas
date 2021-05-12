@@ -3,13 +3,12 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "Sanchez", serif;
-  }
+}
 
 .title{
     color:rgb(48, 48, 48);
     font-size: 24px;
     font-style: italic;
-    border-bottom: solid lightslategrey 1px;
     margin-bottom: revert;
     margin-top: revert;
     margin-left: 10px;
@@ -20,7 +19,7 @@
     font-size: 10px;
     justify-content: center;
 }
-  .navigation-bar li {
+.navigation-bar li {
     padding: 5px;
     margin-top: -12px;
 }
@@ -28,7 +27,6 @@
     margin-left: 10px;
     display: flex;
     color:rgb(48, 48, 48);
-    border-bottom: solid lightslategrey 1px;
     align-items: center;
 }
 .first-element {
@@ -45,7 +43,6 @@
 
 .product-image {
     width: 75px;
-  
 }
 
 .elements{
@@ -56,19 +53,15 @@
 }
 
 .product-name {
-    margin: 5px 20px 5px 0;
     line-height: 1.4em;
     display: block;
-    margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
 
-.place-holder{
-/*     max-width: 30px;*/    
+.place-holder{ 
     margin-left: 20px;
-/*     margin-left: 10px;*/
     margin-right: 10px;
     width: 40px;
 }
@@ -92,6 +85,31 @@
     margin-left: 40px;
 }
 
+.line{
+    border-bottom: solid lightslategrey 1px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 24px;
+    font-size: 16px;
+    align-items: center;
+    margin-left: 192px;
+}
+
+.end-button{
+    background-color: #c66;
+    border: none;
+    color: white;
+    padding: 5px 19px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 3px;
+    float: right;
+    margin-right: 24px;
+}
+
 @media (min-width: 769px) {
     .navigation-bar {
         display: flex;
@@ -105,44 +123,43 @@
         margin-top: -12px;
     }
     .product-list {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     }
     .vinos-borde {
-      width: 43%;
+    width: 43%;
     }
     .product-container {
-        font-size: 20px;
-        margin-left: 0px;
-        display: flex;
-        color: rgb(48, 48, 48);
-        border-bottom: solid lightslategrey 1px;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
+    font-size: 20px;
+    margin-left: 0px;
+    display: flex;
+    color: rgb(48, 48, 48);
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
     }
     .elements{
-        font-size: 20;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        min-width: 510px;
+    font-size: 20;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 510px;
     }
     .product-name {
         font-size: 22px;
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
     }
     .title{
         color:rgb(48, 48, 48);
         font-size: 30px;
         font-style: italic;
-        border-bottom: solid lightslategrey 1px;
         margin-bottom: -6px;
         margin-top: revert;
         margin-left: 10px;
@@ -155,28 +172,101 @@
         font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
         font-size: 12px;
         border-radius: 3px;}
-  }
-  @media (min-width: 1280px) {
-    .vinos-borde {
-      width: 21%;
-    }
-    .more-products {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    .nav-bar {
-      font-size: 26px;
-    }
-    .user-links li {
-      font-size: 28px;
-    }
-    .price {
+
+    .price-container {
         display: flex;
-        margin-left: 10px;
-        margin-right: 10px;
-        clear: both;
-        width: 70px;
+        justify-content: flex-end;
+        margin-right: 10%;
+        font-size: 16px;
+        align-items: center;
+        }
+    
+    .end-button{
+        background-color: #c66;
+        border: none;
+        color: white;
+        padding: 5px 19px;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 3px;
+        float: right;
+        margin-right: 10%;
     }
-  }
-  
+}
+@media (min-width: 1280px) {
+        .vinos-borde {
+        width: 21%;
+        }
+        .more-products {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        }
+        .nav-bar {
+        font-size: 26px;
+        }
+        .user-links li {
+        font-size: 28px;
+    }
+
+    .line{
+        display:none;
+    }
+
+    .price-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20%;
+        font-size: 16px;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .end-button{
+        display: flex;
+        background-color: #c66;
+        border: none;
+        color: white;
+        padding: 5px 19px;
+        text-decoration: none;
+        font-size: 16px;
+        align-items: center;
+        flex-wrap: nowrap;
+        border-radius: 3px;
+        justify-content: space-evenly;
+        align-content: center;
+        margin-right: 20%;
+    }
+
+        .elements{
+            position: relative;
+            bottom: 0px;
+            left: 0px;
+            height: auto;
+            width: auto;
+        }
+
+    /*   .product-name {
+            display: flex;
+            line-height: 1.4em;
+            display: flex;
+        } */
+
+        .product-name{
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+
+    .title{
+        color:rgb(48, 48, 48);
+        font-size: 30px;
+        font-style: italic;
+        margin-bottom: -6px;
+        margin-top: revert;
+        margin-left: 200px;
+    }
+}
