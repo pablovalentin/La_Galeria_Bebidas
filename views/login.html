@@ -74,13 +74,19 @@
         <form action="/login" method="POST" class="login-form">
             <label><h2>INICIÁ SESIÓN</h2> </label>
             <div class="control-form-login">
-                <label>Correo electrónico:</label>
-                <input type="email" name="email" placeholder="Correo electrónico" class="control-login" autofocus required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" idr="email" name="email" placeholder="Correo electrónico" class="control-login" autofocus required>
             </div>
             <div class="control-form-login">
-                <label>Contraseña:</label>
-                <input type="password" name="password" placeholder="Contraseña" class="control-login" required>
-                <div class="forgot-pass"><a href="#"><strong>¿Olvidaste tu contraseña?</strong></a></div>
+                <label for="passoword">Contraseña:</label>
+                <input type="password" id="passoword" name="password" placeholder="Contraseña" class="control-login" required>
+                <div class="forgot-pass">
+                    <a href="#"><strong>¿Olvidaste tu contraseña?</strong></a>
+                </div>
+                <div class="remember-login">
+                    <input type="checkbox" name="remember" value="remember" id="remember">
+                    <label for="remember">Recordar mis datos</label>
+                </div>
             </div>
             <button type="submit" class="button-login">INICIÁ SESIÓN</button>
             <hr class="line-break" size="1" width="90%" color="#484747">  

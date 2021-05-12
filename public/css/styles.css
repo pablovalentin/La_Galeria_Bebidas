@@ -11,7 +11,7 @@ a {
   color: #484747;
 }
 a:active, a:hover {
-  color: rgb(204, 198, 198)
+  color: rgb(194, 151, 151)
 }
 .social-media {
   display: none;
@@ -37,10 +37,10 @@ a:active, a:hover {
 .burger-menu {
   color: white;
   margin: auto;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   font-size: 30px;
-  padding: 1px;
+  padding: 3px;
   background-color: #484747;
   text-align: center;
   border-radius: 10px;
@@ -245,9 +245,9 @@ main {
     flex-wrap: wrap;
   }
   .nav-bar {
-    font-size: 26px;
+    font-size: 24px;
   }
   .user-links li {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
