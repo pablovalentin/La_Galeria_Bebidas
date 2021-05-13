@@ -10,9 +10,14 @@ a {
   text-decoration: none;
   color: #484747;
 }
+<<<<<<< HEAD
 a:active,
 a:hover {
   color: rgb(204, 198, 198);
+=======
+a:active, a:hover {
+  color: rgb(194, 151, 151)
+>>>>>>> 5b91e97f3a463bc86842e0533c907747699c8e4b
 }
 .social-media {
   display: none;
@@ -38,10 +43,10 @@ a:hover {
 .burger-menu {
   color: white;
   margin: auto;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   font-size: 30px;
-  padding: 1px;
+  padding: 3px;
   background-color: #484747;
   text-align: center;
   border-radius: 10px;
@@ -246,9 +251,9 @@ main {
     flex-wrap: wrap;
   }
   .nav-bar {
-    font-size: 26px;
+    font-size: 24px;
   }
   .user-links li {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
