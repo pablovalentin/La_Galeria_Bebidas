@@ -10,14 +10,9 @@ a {
   text-decoration: none;
   color: #484747;
 }
-<<<<<<< HEAD
 a:active,
 a:hover {
-  color: rgb(204, 198, 198);
-=======
-a:active, a:hover {
-  color: rgb(194, 151, 151)
->>>>>>> 5b91e97f3a463bc86842e0533c907747699c8e4b
+  color: rgb(194, 151, 151);
 }
 .social-media {
   display: none;
