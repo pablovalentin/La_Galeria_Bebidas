@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>La Galeria Bebidas</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/producto.css">    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="social-media">
+                <ul>
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-whatsapp"></i></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/"><img src="/images/la-galeria-logo-mobile.png" alt = "Logo La Galeria" width = 100%></a>
+            </div>
+            <br>
+            <div class="user-links">
+                <ul>
+                    <li><i class="fas fa-search"></i></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn"><i class="fas fa-user"></i></button>
+                            <div class="dropdown-content">
+                                <a href="/login">Login</a>     
+                                <a href="/registro">Registro</a>
+                                
+                            </div>
+                        </div> 
+                    </li>
+                    <li><a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+            <br>
+        </div>
+        <nav class="button-links">
+            <ul class="nav-bar">    
+                <li><a href="#paginadevinos">Vinos</a></li>
+                <li><a href="#paginadevinos">Whiskies</a></li>
+                <li><a href="#paginadevinos">Spirits</a></li>
+                <li><a href="#paginadevinos">Promociones</a></li>
+                <li><a href="#paginadevinos">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="div-burger">
+            <div class="dropdown-burger">
+                <button class="dropbtn-burger">
+                    <div class="burger-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#paginadevinos">Vinos</a>
+                    <a href="#paginadevinos">Whiskies</a>
+                    <a href="#paginadevinos">Spirits</a>
+                    <a href="#paginadevinos">Promociones</a>
+                    <a href="#paginadevinos">Contacto</a>
+                    
+                </div>
+            </div> 
+        </div>
+    </header>  
+    <main>
+        <div class="product-detail">
+            <div>
+                <img src="/images/TrumpeterMalbec.png" alt = "Vino Rutini Malbec" class="images" width="100%">
+            </div>
+            <div class="product-description">
+                <h1>Trumpeter Malbec</h1>
+                <p class="sugerencias-titulo">Sugerencias de acompañamiento: </p>
+                <p class="sugerencias-desc">Tabla de quesos duros (Parmesano, sardo), carnes vacunas grilladas: bife de chorizo y pastas rellenas con salsas a base de carnes.</p>
+                <p class="sugerencias-notas">Notas de Cata</p>
+                <p class="sugerencias-desc">De un impactante color violeta. Nariz frutal destacando ciruelas, cerezas y notas florales que nos recuerdan a las violetas. Posee gran cuerpo y su vivaz acentúa sus taninos intensos que se vuelven aterciopelados en el retrogusto.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="precio">$ 780</div>
+        <div class="cantidades">
+            <i class="fas fa-minus"></i><input type="quantity" class= "place-holder" name="Cantidad" placeholder="1"><i class="fas fa-plus"></i>
+        </div>
+        <div class="button">
+            <button class="buy-button" type="button">COMPRAR</button>
+        </div>
+        
+    </main>
+</body>
+<footer>
+    <div class="social-media-footer">
+        <ul>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-whatsapp"></i></li>
+        </ul>
+    </div>
+    <div class = "logo-footer">
+        <img src="/images/Logo-La-Galeria-invertido.svg" alt = "Logo La Galeria" width=80% style="margin-left:6%;">
+    </div>
+    <div class="payment-methods-footer">
+        <ul>
+            <li><i class="fab fa-cc-visa"></i></li>
+            <li><i class="fab fa-cc-mastercard"></i></li>
+            <li><i class="fas fa-qrcode"></i></li>
+        </ul>
+    </div>
+</footer>
+</html>

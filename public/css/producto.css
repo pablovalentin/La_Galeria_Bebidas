@@ -1,0 +1,70 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Sanchez", serif;
+}
+
+.product-description h1 {
+  border-bottom: 1px solid #484747;
+  font-size: 24px;
+  padding-bottom: 8px;
+  color: #4d4d4d;
+  font-weight: 400;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.sugerencias-titulo {
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 1.4em;
+  margin-right: 1.4em;
+  text-transform: uppercase;
+}
+
+.sugerencias-desc {
+  font-size: 14px;
+  margin-left: 1.4em;
+  margin-right: 1.4em;
+  font-weight: normal;
+  color: #4d4d4d;
+}
+
+.sugerencias-notas {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-bottom: 1px solid #484747;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 1.4em;
+  margin-right: 1.4em;
+  text-transform: uppercase;
+}
+
+.place-holder {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 40px;
+  text-align: center;
+}
+
+.cantidades {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.buy-button {
+  background-color: #484747;
+  color: white;
+  font-size: 18px;
+  align-items: center;
+}

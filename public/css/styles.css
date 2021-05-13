@@ -10,8 +10,9 @@ a {
   text-decoration: none;
   color: #484747;
 }
-a:active, a:hover {
-  color: rgb(204, 198, 198)
+a:active,
+a:hover {
+  color: rgb(204, 198, 198);
 }
 .social-media {
   display: none;
