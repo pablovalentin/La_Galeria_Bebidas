@@ -1,27 +1,27 @@
-Definición de temática:
-La tematica elegida para el desarrollo del e-commerce va a ser el de una vinoteca.
-Apuntando al publico conocedor y entusiasta del buen beber.
+* <h1> Definición de temática del proyeto: </h1>
+  La tematica elegida para el desarrollo del e-commerce va a ser el de una vinoteca.
+  Apuntando al publico conocedor y entusiasta del buen beber.
 
-Inspiración:
-https://www.bodegasbianchi.com.ar/
-https://www.vinosyspirits.com/
-https://lacavadedupont.com.ar/
-https://tienda.rutiniwines.com/
-https://www.valentinserrano.com/
+* <h1> Inspiración: </h1>
+  https://www.bodegasbianchi.com.ar/ <br>
+  https://www.vinosyspirits.com/ <br>
+  https://lacavadedupont.com.ar/ <br>
+  https://tienda.rutiniwines.com/ <br>
+  https://www.valentinserrano.com/ <br>
 
-Web de referencia del cliente
+* <h1> Web de referencia del cliente </h1>
 
-https://vinotecaligier.com/
+  https://vinotecaligier.com/
 
-¿Quiénes somos?
+* <h1> ¿Quiénes somos? </h1>
 
-Nicolás Castellano: Realizador audiovisual y aprendiz de programador Full Stack
+  <h2> Nicolás Castellano: </h2> Realizador audiovisual y aprendiz de programador Full Stack <b>
 
-Nahir Arrejoria: Traductora de Inglés.
+  <h2> Nahir Arrejoria: </h2> Traductora de Inglés. <b>
 
-Pablo Valentín: Analista programador, con experiencia en Cobol y Visual 5/6, buscando actualizarse!
+  <h2> Pablo Valentín: </h2> Analista programador, con experiencia en Cobol y Visual 5/6, buscando actualizarse! <b>
 
-Repositorios:
+* <h1> Repositorios: <h1>
 
-Trello: https://trello.com/b/YMD3fHWV/proyecto-integrador
-Github: https://github.com/pablovalentin/La_Galeria_Bebidas
+  - Trello: https://trello.com/b/YMD3fHWV/proyecto-integrador <br>
+  - Github: https://github.com/pablovalentin/La_Galeria_Bebidas
