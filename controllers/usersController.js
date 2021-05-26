@@ -8,8 +8,7 @@ const usersController = {
     },
     registro: function(req, res) {
         res.sendFile(path.resolve(viewsPath, './views/registro.html'))
-    }
-    
+    },
 }
 
 module.exports = usersController;

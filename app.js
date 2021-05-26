@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 let rutasUsers = require ('./routes/usersRoutes.js')
 let rutasMain = require ('./routes/mainRoutes.js')
+let rutasShoppingCart = require ('./routes/shoppingCartRoutes.js')
+let rutasProduct = require ('./routes/productRoutes.js')
 const publicPath = path.resolve(__dirname, 'public');
 
 
@@ -15,12 +17,5 @@ app.listen(3000, () =>{
 app.use(express.static(publicPath));
 app.use('/user', rutasUsers);
 app.use('/', rutasMain);
-
-
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/shoppingCart.html'));
-});
-
-app.get('/producto', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/producto.html'));
-});
+app.use('/carrito', rutasShoppingCart);
+app.use('/producto', rutasProduct);
