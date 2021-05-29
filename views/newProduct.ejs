@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/producto.css">    
+    
+</head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+    <main>
+        <!-- Formulario registro -->
+        <form action="/product" method="POST" class="product-form">
+            <label><h2>AGREGAR PRODUCTO</h2> </label>
+            <hr class="line-break" size="1" width="90%" color="#484747">  
+            <div class="control-form-product">
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" class="control" autofocus required>
+            </div>
+            <div class="control-form-product">
+                <label for="last-name">Sugerencia:</label>
+                <input type="text" name="last-name" id="last-name" class="control" required>
+            </div>
+            <div class="control-form-product">
+                <label for="email">Bodega:</label>
+                <input type="email" name="email" id="email" class="control" required>
+            </div>
+            <div class="control-form-product">
+                <label for="password">Nota de cata:</label>
+                <input type="password" name="pasword" id="password" class="control" required>
+            </div>
+            <div class="control-form-product">
+                <label for="last-name">Precio:</label>
+                <input type="text" name="last-name" id="last-name" class="control" required>
+            </div>
+            <div class="control-form-product">
+                <label for="last-name">Cantidad:</label>
+                <input type="text" name="last-name" id="last-name" class="control" required>
+            </div>
+            <div class="control-form-product">
+                <label for="myfile">Foto del producto:</label>
+                <div class="seleccionar">
+                    <input type="file" id="myfile" name="myfile" class="product-pic">
+                </div>
+            </div>
+            <button type="submit" class="button-create">GUARDAR PRODUCTO</button>
+        </form>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+</body>
+</html>
