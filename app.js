@@ -13,6 +13,8 @@ app.listen(3000, () =>{
     console.log("Servidor corriendo en el puerto 3000");
 });
 
+app.set('view engine', 'ejs');
+app.set('views', 'views')
 // use
 app.use(express.static(publicPath));
 app.use('/user', rutasUsers);

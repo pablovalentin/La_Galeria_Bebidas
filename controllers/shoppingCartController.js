@@ -3,7 +3,8 @@ const viewsPath = path.join(__dirname, '../')
 
 const shoppingCartController = {
     carrito: function(req, res) {
-        res.sendFile(path.resolve(viewsPath, './views/shoppingCart.html'))
+        //res.sendFile(path.resolve(viewsPath, './views/shoppingCart.ejs'))
+        return res.render('shoppingCart')
     },
 }
 

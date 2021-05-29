@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('./partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/producto.css">    
+    </head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+    <main>
+        <div class="product-detail">
+            <div>
+                <img src="/images/TrumpeterMalbec.png" alt = "Vino Rutini Malbec" class="images" width="100%">
+            </div>
+            <div class="product-description">
+                <h1>Trumpeter Malbec</h1>
+                <p class="sugerencias-titulo">Sugerencias de acompañamiento: </p>
+                <p class="sugerencias-desc">Tabla de quesos duros (Parmesano, sardo), carnes vacunas grilladas: bife de chorizo y pastas rellenas con salsas a base de carnes.</p>
+                <p class="sugerencias-notas">Notas de Cata</p>
+                <p class="sugerencias-desc">De un impactante color violeta. Nariz frutal destacando ciruelas, cerezas y notas florales que nos recuerdan a las violetas. Posee gran cuerpo y su vivaz acentúa sus taninos intensos que se vuelven aterciopelados en el retrogusto.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="precio">$ 780</div>
+        <div class="cantidades">
+            <i class="fas fa-minus"></i><input type="quantity" class= "place-holder" name="Cantidad" placeholder="1"><i class="fas fa-plus"></i>
+        </div>
+        <div class="button">
+            <button class="buy-button" type="button">COMPRAR</button>
+        </div>
+        
+    </main>
+</body>
+<%- include ('./partials/footer.ejs') %>
+</html>

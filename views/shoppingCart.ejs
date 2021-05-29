@@ -1,75 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Galeria Bebidas</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/css/shoppingCart.css">   
-    <link rel="stylesheet" href="/css/styles.css">   
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/shoppingCart.css">     
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <div class="social-media">
-                <ul>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                    <li><i class="fab fa-whatsapp"></i></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <a href="/"><img src="/images/la-galeria-logo-mobile.png" alt = "Logo La Galeria" width = 100%></a>
-            </div>
-            <br>
-            <div class="user-links">
-                <ul>
-                    <li><i class="fas fa-search"></i></li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn"><i class="fas fa-user"></i></button>
-                            <div class="dropdown-content">
-                                <a href="/login">Login</a>     
-                                <a href="/registro">Registro</a>
-                                
-                            </div>
-                        </div> 
-                    </li>
-                    <li><a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
-            </div>
-            <br>
-        </div>
-        <nav class="button-links">
-            <ul class="nav-bar">    
-                <li><a href="#paginadevinos">Vinos</a></li>
-                <li><a href="#paginadevinos">Whiskies</a></li>
-                <li><a href="#paginadevinos">Spirits</a></li>
-                <li><a href="#paginadevinos">Promociones</a></li>
-                <li><a href="#paginadevinos">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="div-burger"> <!-- agregamos div para reducir hover del botón -->
-            <div class="dropdown-burger">
-                <button class="dropbtn-burger">
-                    <div class="burger-menu">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#paginadevinos">Vinos</a>
-                    <a href="#paginadevinos">Whiskies</a>
-                    <a href="#paginadevinos">Spirits</a>
-                    <a href="#paginadevinos">Promociones</a>
-                    <a href="#paginadevinos">Contacto</a>
-                    
-                </div>
-            </div> 
-        </div>
-    </header> 
+    <%- include ('./partials/header.ejs') %>
     <main>
         <h1 class="title";>Carrito de compras</h1>
             <div class="line"></div>
@@ -152,24 +88,6 @@
             </div>
             
     </main>
-    <footer>
-        <div class="social-media-footer">
-            <ul>
-                <li><i class="fab fa-facebook"></i></li>
-                <li><i class="fab fa-instagram"></i></li>
-                <li><i class="fab fa-whatsapp"></i></li>
-            </ul>
-        </div>
-        <div class = "logo-footer">
-            <img src="/images/Logo-La-Galeria-invertido.svg" alt = "Logo La Galeria" width=80% style="margin-left:6%;">
-        </div>
-        <div class="payment-methods-footer">
-            <ul>
-                <li><i class="fab fa-cc-visa"></i></li>
-                <li><i class="fab fa-cc-mastercard"></i></li>
-                <li><i class="fas fa-qrcode"></i></li>
-            </ul>
-        </div>
-    </footer>
+    <%- include ('./partials/footer.ejs') %>
 </body>
 </html>
