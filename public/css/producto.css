@@ -134,16 +134,10 @@ label h2 {
   margin-right: 35px;
 }
 .control {
-  width: 100%;
+  width: 70%;
   padding: 12px;
   border-radius: 7px;
   border: solid 1px black;
-}
-.control-area {
-  padding: 2px;
-  border-radius: 7px;
-  border: solid 1px black;
-  color: #636060;
 }
 .line-break {
   margin-bottom: 15px;
