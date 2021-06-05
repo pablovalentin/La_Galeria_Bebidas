@@ -21,9 +21,9 @@ const productController = {
         //const id = req.params.id
         const { id } = req.params
         
-        const planetDetail = productModel.findByPk(id)
+        const productDetail = productModel.findByPk(id)
         
-        res.render('producto', { planetDetail })
+        res.render('producto', { productDetail })
     },
     categoria: function(req,res){
         const winesList = productModel.findAll()
