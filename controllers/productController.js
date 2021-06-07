@@ -15,6 +15,13 @@ const productController = {
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
         return res.render('editProduct')
     },
+    edit: function(req,res){
+        const product = productModel.findByPk(req.params.id);
+
+        res.render('editProduct', {
+            product
+        });
+    },
     detail: (req, res) => {
         // levantamos el id desde la url (parámetro)
         

@@ -10,27 +10,28 @@
     <main>
         <!-- Formulario registro -->
         <form action="/product" method="POST" class="product-form">
+        
             <label><h2>MODIFICAR PRODUCTO</h2> </label>
             <hr class="line-break" size="1" width="90%" color="#484747">  
             <div class="control-form-product">
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" placeholder="Trumpeter" class="control" autofocus required>
+                <input type="text" name="name" id="name" class="control" autofocus required value="<%= product.name %>">
             </div>
             <div class="control-form-product">
                 <label for="cepa">Cepa:</label>
-                <input type="textarea" name="cepa" id="cepa" placeholder="Malbec" class="control" required>
+                <input type="textarea" name="cepa" id="cepa" class="control" required value="<%= product.cepa %>">
             </div>
             <div class="control-form-product">
                 <label for="sugerencia">Sugerencias:</label>                
-                <textarea name="sugerencia" id="sugerencia" cols="47" rows="6" placeholder="Tabla de quesos duros (Parmesano, sardo), carnes vacunas grilladas: bife de chorizo y pastas rellenas con salsas a base de carnes." class="control" required></textarea>
+                <textarea name="sugerencia" id="sugerencia" cols="47" rows="6" class="control" required ><%= product.sugerencia %></textarea>
             </div>
             <div class="control-form-product">
                 <label for="notasCata">Nota de cata:</label>
-                <textarea name="notasCata" id="notasCata" cols="35" rows="6" placeholder="De un impactante color violeta. Nariz frutal destacando ciruelas, cerezas y notas florales que nos recuerdan a las violetas. Posee gran cuerpo y su vivaz acentúa sus taninos intensos que se vuelven aterciopelados en el retrogusto." class="control" required></textarea>
+                <textarea name="notasCata" id="notasCata" cols="35" rows="6" class="control" required><%= product.cata %></textarea>
             </div>
             <div class="control-form-product">
                 <label for="precio">Precio:</label>
-                <input type="text" name="precio" id="precio" placeholder="$780" class="control" required>
+                <input type="text" name="precio" id="precio" value="<%= product.price %>" class="control" required>
             </div>
             <div class="control-form-product">
                 <label for="Cantidad">Cantidad:</label>

@@ -21,3 +21,7 @@ app.use('/user', rutasUsers);
 app.use('/', rutasMain);
 app.use('/carrito', rutasShoppingCart);
 app.use('/producto', rutasProduct);
+
+// No olvidarse esto para que la data se envie correctamente desde un formulario
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
