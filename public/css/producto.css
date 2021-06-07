@@ -52,8 +52,8 @@
 }
 
 .images {
-  width: 60%;
-  padding-left: 35%;
+  width: 80%;
+  padding-left: 20%;
 }
 
 .cantidades {
@@ -96,7 +96,7 @@
   }
 
   .images {
-    width: 220%;
+    width: 170%;
     padding-left: 0;
     padding-right: 100px;
   }
