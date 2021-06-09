@@ -12,5 +12,5 @@ router.get('/editProduct', productController.editarProducto);
 
 // Update
 router.get('/:id/edit', productController.edit);
-//router.put('/:id', productController.update);
+router.put('/:id', productController.update);
 module.exports = router;

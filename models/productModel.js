@@ -27,5 +27,26 @@ module.exports = {
         const wineFound = wines.find(wine => wine.id == id);
         // Devolvemos el planeta
         return wineFound;
-    }
+    },
+    update(data, id) {
+        const products = this.readFile();
+
+        const newProducts = products.map(product => {
+            if(product.id == id){
+                product = {
+                    id: product.id,
+                    ...data
+                }
+            }
+            return product;
+        });
+
+        this.writeFile(newProducts);
+    },
+    writeFile(newData) {
+        // Pasar la data a json
+        const dataJson = JSON.stringify(newData, null, 2);
+        // Escribir el archivo
+        fs.writeFileSync(this.filename, dataJson);
+    },
 }

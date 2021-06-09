@@ -22,6 +22,15 @@ const productController = {
             product
         });
     },
+    update: (req, res) => {
+        const data = req.body;
+        const { id } = req.params;
+    
+        const originalProduct = productModel.findByPk(id)
+        productModel.update(data, id);
+
+        res.redirect('/producto/detail/' + id);
+    },
     detail: (req, res) => {
         // levantamos el id desde la url (parámetro)
         
