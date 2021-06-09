@@ -5,11 +5,12 @@ const productController = require ('../controllers/productController.js')
 
 router.get('/product', productController.producto);
 router.get('/detail/:id', productController.detail);
+router.get('/productABM', productController.ABMProducto);
 router.get('/:category', productController.filter);
 //router.get('/vinos', productController.categoria);
 router.get('/newProduct', productController.nuevoProducto);
 router.get('/editProduct', productController.editarProducto);
-router.get('/ABMProduct', productController.ABMProducto);
+
 
 // Update
 router.get('/:id/edit', productController.edit);
