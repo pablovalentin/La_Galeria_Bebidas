@@ -15,6 +15,10 @@ const productController = {
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
         return res.render('editProduct')
     },
+    ABMProducto: function(req, res){
+        console.log("Estoy aca!")
+        return res.render('productABM')
+    },
     edit: function(req,res){
         const product = productModel.findByPk(req.params.id);
 

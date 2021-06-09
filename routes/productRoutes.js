@@ -9,6 +9,7 @@ router.get('/:category', productController.filter);
 //router.get('/vinos', productController.categoria);
 router.get('/newProduct', productController.nuevoProducto);
 router.get('/editProduct', productController.editarProducto);
+router.get('/ABMProduct', productController.ABMProducto);
 
 // Update
 router.get('/:id/edit', productController.edit);
