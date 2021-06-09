@@ -12,50 +12,21 @@
         </div>
         <br>
         <section class="product-list">
+            <% let counter = 0
+            winesList.forEach((wine) => { 
+                if (counter <= 3) { %>
             <article class="vinos-borde">
                 <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Rutini Malbec" class="images" width="100%"></a>
+                    <a href="/producto/detail/<%= wine.id %>"><img src="<%= wine.image %>" alt = "<%= wine.name %>" class="images" width="100%"></a>
                     <div class="product-description">
-                        <p class = "coleccion">Rutini</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$2500</p>     
+                        <p class = "coleccion"><%= wine.name %> </p>    
+                        <p class = "cepa"><%= wine.cepa %></p>
+                        <p class = "precio">$ <%= wine.price %></p>     
                         <i class="fas fa-cart-plus"></i>            
                     </div>
                 <!-- </div> -->
             </article>
-            <article class="vinos-borde">
-                <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Dominio Malbec" class="images" width="100%"></a>
-                    <div class="product-description">
-                        <p class = "coleccion">Dominio</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$1700</p>       
-                        <i class="fas fa-cart-plus"></i>                   
-                    </div>
-                <!-- </div> -->
-            </article>
-            <article class="vinos-borde"> 
-                <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Trumpeter Malbec" class="images" width="100%"></a>
-                    <div class="product-description">
-                        <p class = "coleccion">Trumpeter</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$780</p>   
-                        <i class="fas fa-cart-plus"></i>                     
-                    </div>
-                <!-- </div> -->
-            </article>
-            <article class="vinos-borde">
-                <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Trumpeter Malbec" class="images" width="100%"></a>
-                    <div class="product-description">
-                        <p class = "coleccion">Trumpeter</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$780</p>   
-                        <i class="fas fa-cart-plus"></i>                     
-                    </div>
-                <!-- </div> -->
-            </article>
+            <% counter++}else return}) %>
         </section>
         <section class="more-products">
             <article class="vinos-borde">

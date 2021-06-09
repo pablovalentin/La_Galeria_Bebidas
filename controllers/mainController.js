@@ -1,10 +1,11 @@
 const path = require('path');
 const viewsPath = path.join(__dirname, '../')
+const productModel = require('../models/productModel')
 
 const mainController = {
     home: function(req, res){
-        //res.sendFile(path.resolve(viewsPath, './views/index.html'))
-        return res.render('index')
-    }   
+        const winesList = productModel.findAll()
+        return res.render('index',{winesList})
+    }    
 }
 module.exports = mainController;

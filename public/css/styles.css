@@ -229,7 +229,7 @@ main {
   }
   .product-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   .vinos-borde {
@@ -242,7 +242,7 @@ main {
   }
   .more-products {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   .nav-bar {

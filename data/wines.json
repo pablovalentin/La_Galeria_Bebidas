@@ -34,6 +34,24 @@
     "price": 1012,
     "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
     "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa."
-    }
+    },
+    {
+        "id": 5,
+        "image": "/images/04_Trumpeter-Reserve-Malbec.jpeg",
+        "name": "Trumpeter",
+        "cepa": "Malbec",
+        "price": 1012,
+        "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
+        "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa."
+        },
+        {
+            "id": 6,
+            "image": "/images/04_Trumpeter-Reserve-Malbec.jpeg",
+            "name": "Trumpeter",
+            "cepa": "Malbec",
+            "price": 1012,
+            "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
+            "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa."
+            }
 
 ]
