@@ -5,16 +5,21 @@ module.exports = {
     filename: path.resolve(__dirname, '../data/products.json'),
     readFile() {
         // Leer nuestra informacion
-        const winesPath = this.filename;
-        const winesJson = fs.readFileSync(winesPath, 'utf-8');
+        const productsPath = this.filename;
+        const productsJson = fs.readFileSync(productsPath, 'utf-8');
         // Parsear la informacion
-        return JSON.parse(winesJson);
+        return JSON.parse(productsJson);
     },
     findAll() {
         // Leer nuestra informacion
-        const wines = this.readFile();
+        const products = this.readFile();
         // devolver la info
-        return wines;
+        return products;
+    },
+    findFiltered(category){
+        const products = this.readFile();
+        const productsFiltered = products.filter(product => product.category == category);
+        return productsFiltered
     },
     findByPk(id) {
         const wines = this.readFile();

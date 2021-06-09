@@ -32,6 +32,11 @@ const productController = {
         
         res.render('producto', { productDetail })
     },
+    filter: function (req, res){
+        const category = req.params.category
+        const productsFiltered = productModel.findFiltered(category)
+        res.render('category', { productsFiltered })
+    },
     categoria: function(req,res){
         const winesList = productModel.findAll()
         res.render('category', { winesList })

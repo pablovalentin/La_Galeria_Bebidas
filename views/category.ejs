@@ -7,19 +7,25 @@
     <%- include ('./partials/header.ejs') %>
     <main>
         <section class="product-list">
-            <% winesList.forEach((wine) => { %>
+            <% if (productsFiltered == '') {%>
+                <div class="no-products">
+                    <h2 class="message">No hay productos de esta categoría</h2> 
+                </div>
+            <% } else { %>
+            <% productsFiltered.forEach((product) => { %>
             <article class="vinos-borde">
                 <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/detail/<%= wine.id %>"><img src="<%= wine.image %>" alt = "<%= wine.name %>" class="images" width="100%"></a>
+                    <a href="/producto/detail/<%= product.id %>"><img src="<%= product.image %>" alt = "<%= product.name %>" class="images" width="100%"></a>
                     <div class="product-description">
-                        <p class = "coleccion"><%= wine.name %> </p>    
-                        <p class = "cepa"><%= wine.cepa %></p>
-                        <p class = "precio">$ <%= wine.price %></p>     
+                        <p class = "coleccion"><%= product.name %> </p>    
+                        <p class = "cepa"><%= product.cepa %></p>
+                        <p class = "precio">$ <%= product.price %></p>     
                         <i class="fas fa-cart-plus"></i>            
                     </div>
                 <!-- </div> -->
             </article>
             <% }) %>
+            <% } %>
         </section>
     </main> 
     <%- include ('./partials/footer.ejs') %>
