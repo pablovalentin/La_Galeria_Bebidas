@@ -1,0 +1,64 @@
+[
+    {
+    "id": 1,
+    "image": "/images/01_Trumpeter-Reserve-Pinot-Grigio.jpeg",
+    "name": "Trumpeter Reserve",
+    "cepa": "Pinot",
+    "price": 942,
+    "cata": "Amarillo cristalino, con matices verdosos y dorados. Sus aromas remiten a frutas blancas y citrus, con un fino toque de anís. Fresco y untuoso, su óptima acidez descubre un final de boca franco, de muy buena persistencia.",
+    "sugerencia": "Carnes blancas como pollo o pavo. Pescados como el salmón o merluza. Mariscos. Comida india condimentada con Curry. Ensaladas.",
+    "category": "wine"
+    },
+    {
+    "id": 2,
+    "image": "/images/02_Dominio-Brut-Nature.jpg",
+    "name": "Dominio",
+    "cepa": "Brut",
+    "price": 1828,
+    "cata": "Tonos coral cobrizos con matices color piel de cebolla. Burbujas pequeñas y persistentes. En nariz posee una sutil complejidad aromática en las que se destacan notas florales y frutadas. En boca es elegante, fresco, de gran cremosidad y una acidez equilibrada.",
+    "sugerencia": "Tabla de quesos duros (Parmesano, sardo), carnes vacunas grilladas: bife de chorizo y pastas rellenas con salsas a base de carnes.",
+    "category": "wine"
+    },
+    {
+    "id": 3,
+    "image": "/images/03_Rutini-Rose-de-Malbec.jpeg",
+    "name": "Rutini Rose",
+    "cepa": "Malbec",
+    "price": 2000,
+    "cata": "Rosado, color piel de cebolla con matices cobrizos. Su color anuncia la primavera. En nariz regala amenas notas florales, sutiles frutos rojos y algunos frutos secos como almendra y nuez. El coco y la vainilla aparecen discretamente por el aporte roblizo. Complejo y distinguido, en boca se presenta fresco y con un gran volumen que le otorga un prolongado final.",
+    "sugerencia": "Aperitivos, tapas, pescados, frutos de mar, risotto de langostinos, pastas, platos vegetarianos, entradas y carnes frías (carpaccio), ensaladas de jamón crudo, palta y tomate, hojaldre de atún, paella, grillada de cerdo, quesos de cabra y oveja frescos.",
+    "category": "wine"
+    
+    },
+    {
+    "id": 4,
+    "image": "/images/04_Trumpeter-Reserve-Malbec.jpeg",
+    "name": "Trumpeter",
+    "cepa": "Malbec",
+    "price": 1012,
+    "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
+    "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa.",
+    "category": "wine"
+    },
+    {
+    "id": 5,
+    "image": "/images/04_Trumpeter-Reserve-Malbec.jpeg",
+    "name": "Trumpeter",
+    "cepa": "Malbec",
+    "price": 1012,
+    "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
+    "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa.",
+    "category": "wine"
+    },
+{
+    "id": 6,
+    "image": "/images/04_Trumpeter-Reserve-Malbec.jpeg",
+    "name": "Trumpeter",
+    "cepa": "Malbec",
+    "price": 1012,
+    "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
+    "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa.",
+    "category": "wine"
+    }
+
+]
