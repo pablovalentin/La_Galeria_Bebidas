@@ -80,6 +80,22 @@
   margin: 10px;
 }
 
+table,
+th,
+td {
+  border: 1px solid black;
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+}
+
+th {
+  background-color: #c66;
+  color: white;
+}
+
 @media (min-width: 769px) {
   .div-burger {
     display: none;

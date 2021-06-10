@@ -8,15 +8,25 @@
     <%- include ('./partials/header.ejs') %>
     <main>
         <div>
-            <h1>Administración de productos</h1>
+            <h3>Administración de productos</h3>
             <button class="buy-button" type="button">Nuevo</button>
         </div>
-        <table classs="tabla">
+        <table class="table">
             <tr>
-                <td>ID</td>
-                <td>Nombre</td>
-                <td>Precio</td>
-                <td>Cantidad</td>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr> <!-- Aca hacemos el for, para recorrer y cargar las variables en td -->
+                <td>1</td>
+                <td>Thrumpeter</td>
+                <td>1018</td>
+                <td>50</td>
+                <td>EDITAR</td>
+                <td>ELIMINAR</td>
             </tr>
         </table>
         
