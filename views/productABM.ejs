@@ -7,7 +7,7 @@
 <body>
     <%- include ('./partials/header.ejs') %>
     <main>
-        <div>
+        <div class='admin-prod'>
             <h3>Administración de productos</h3>
             <button class="buy-button" type="button">Nuevo</button>
         </div>
@@ -17,21 +17,41 @@
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
-                <th> </th>
-                <th> </th>
+                <th>Acción</th>
             </tr>
             <tr> <!-- Aca hacemos el for, para recorrer y cargar las variables en td -->
                 <td>1</td>
-                <td>Thrumpeter</td>
+                <td>Trumpeter</td>
                 <td>1018</td>
                 <td>50</td>
-                <td>EDITAR</td>
-                <td>ELIMINAR</td>
+                <td>
+                    <a href="/producto/3/edit"><i class="fas fa-edit"></i></a>
+                    <a href="/producto/3/delete"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr> 
+                <td>1</td>
+                <td>Trumpeter</td>
+                <td>1018</td>
+                <td>50</td>
+                <td>
+                    <a href="/producto/3/edit"><i class="fas fa-edit"></i></a>
+                    <a href="/producto/3/delete"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr> 
+                <td>1</td>
+                <td>Trumpeter</td>
+                <td>1018</td>
+                <td>50</td>
+                <td>
+                    <a href="/producto/3/edit"><i class="fas fa-edit"></i></a>
+                    <a href="/producto/3/delete"><i class="fas fa-trash"></i></a>
+                </td>
             </tr>
         </table>
         
-
-
+        </main>
 </body>
 <%- include ('./partials/footer.ejs') %>
 </html>        

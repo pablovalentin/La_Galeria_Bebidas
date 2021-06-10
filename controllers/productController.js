@@ -16,7 +16,6 @@ const productController = {
         return res.render('editProduct')
     },
     ABMProducto: function(req, res){
-        console.log("Estoy aca!")
         return res.render('productABM')
     },
     edit: function(req,res){
