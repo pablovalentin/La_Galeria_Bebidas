@@ -39,6 +39,7 @@
     "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa.",
     "cata": "Granate intenso, con reflejos purpúras. Es un típico y bien logrado ejemplo de la variedad emblemática de la Argentina. Las notas aromáticas florales y frutadas (ciruela, cassis, frutilla) pueden ser fácilmente apreciadas. La armónica redondez obtenida se debe, en parte, a los jugosos taninos que le otorgan además suavidad un largo y agradable final de boca.",
     "price": "200",
+    "category": "vinos",
     "quantity": "10"
   },
   {
@@ -62,5 +63,50 @@
     "sugerencia": "Quesos de cáscara dura (Sardo, Provolone, Parmesano), cortes magros de carnes rojas (cuadril, lomo) y pastas rellenas con salsas tipo boloñesa.",
     "category": "vinos",
     "quantity": "50"
+  },
+  {
+    "id": 7,
+    "image": "/images/07_Whisky-Single-Malt-Japonés-The-Yamazaki-18-Años-43.jpeg",
+    "name": "The Yamazaki 18 Años 43%",
+    "cepa": "Single Malt",
+    "price": 399.989,
+    "cata": "Es bastante espesa y resinosa, hay una agradable oleosidad con cítricos y cáscaras y un toque de jerez. Un montón de frutas de roble y huerto.",
+    "sugerencia": "Salmon",
+    "category": "Whisky",
+    "quantity": "1"
+  },
+  {
+    "id": 8,
+    "image": "/images/08_jack-daniels-whiskey-2.jpeg",
+    "name": "Jack Daniel's Old No. 7",
+    "cepa": "Bourbon",
+    "price": 4.599,
+    "cata": "Resulta ligero, suave y limpio, con presencia notable de notas dulces. Matices a frutos secos, a un poco de humor y a especias, también están presentes.",
+    "sugerencia": "Para los platos elaborados con carne de cerdo, es recomendable un whisky ligero y de cuerpo suave, con notas medias, ya que se equilibran con el sabor más fuerte y salado de las carnes.",
+    "category": "Whisky",
+    "quantity": "20"
+  },
+  {
+    "id": 9,
+    "image": "/images/09-the_glenlivet.jpeg",
+    "name": "The Glenlivet Founder's Reserve Escocia",
+    "cepa": "Single malt",
+    "price": 4.582,
+    "cata": "Whisky equilibrado y elegante, y según la marca posee delicados aromas cítricos, con notas de naranja dulce y pera, además de toques de caramelo y manzanas caramelizadas.",
+    "sugerencia": "Para muchos la combinación de chocolate y whisky es perfecta. Cuyas notas de frutos oscuros, caramelo, jengibre y canela se llevan fantásticamente bien con el sabor del chocolate.",
+    "category": "Whisky",
+    "quantity": "10"
+  },
+  {
+    "id": 10,
+    "image": "/images/10_GLENFIDDICH-12-Años-1L.jpg",
+    "name": "Glenfiddich 12 Años",
+    "cepa": "Single Malt",
+    "price": 6.859,
+    "cata": "es un whisky suave y ligero, fácil de beber. Posee notas intensas de caramelo y vainilla al principio, que luego van matizándose en distintas notas frutales, como las mencionadas pera y manzana.",
+    "sugerencia": "Para los platos elaborados con carne de cerdo, es recomendable un whisky ligero y de cuerpo suave, con notas medias, ya que se equilibran con el sabor más fuerte y salado de las carnes. ",
+    "category": "Whisky",
+    "quantity": "20"
   }
+  
 ]
