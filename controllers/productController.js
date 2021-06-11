@@ -3,20 +3,21 @@ const viewsPath = path.join(__dirname, '../')
 const productModel = require('../models/productModel')
 
 const productController = {
-    producto: function(req, res){
+    /* producto: function(req, res){
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
         return res.render('producto')
-    },
+    }, */
     nuevoProducto: function(req, res){
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
         return res.render('newProduct')
     },
-    editarProducto: function(req, res){
+    /* editarProducto: function(req, res){
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
         return res.render('editProduct')
-    },
+    }, */
     ABMProducto: function(req, res){
-        return res.render('productABM')
+        const productsList = productModel.findAll()
+        return res.render('productABM', {productsList})
     },
     edit: function(req,res){
         const product = productModel.findByPk(req.params.id);
@@ -30,6 +31,16 @@ const productController = {
         const { id } = req.params;
     
         const originalProduct = productModel.findByPk(id)
+        const { file } = req
+        let image
+        if (file) {
+            image = '/images/' + file.filename
+        } else {
+            image = originalProduct.image
+        }
+        data.image = image
+        data.category = originalProduct.category
+
         productModel.update(data, id);
 
         res.redirect('/producto/detail/' + id);
@@ -48,13 +59,11 @@ const productController = {
         const category = req.params.category
         const productsFiltered = productModel.findFiltered(category)
         res.render('category', { productsFiltered })
-    },
+    }/* ,
     categoria: function(req,res){
         const winesList = productModel.findAll()
         res.render('category', { winesList })
-        /* console.log('category', { winesList })
-        return res.render('category') */
-    }
+    } */
 }
 
 module.exports = productController;

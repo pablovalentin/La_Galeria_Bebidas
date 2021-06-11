@@ -29,50 +29,21 @@
             <% counter++}else return}) %>
         </section>
         <section class="more-products">
+            <% let counterWhisky = 0
+            whiskiesList.forEach((whisky) => { 
+                if (counterWhisky <= 3) { %>
             <article class="vinos-borde">
                 <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Rutini Malbec" class="images" width="100%"></a>
+                    <a href="/producto/detail/<%= whisky.id %>"><img src="<%= whisky.image %>" alt = "<%= whisky.name %>" class="images" width="100%"></a>
                     <div class="product-description">
-                        <p class = "coleccion">Rutini</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$2500</p>     
+                        <p class = "coleccion"><%= whisky.name %> </p>    
+                        <p class = "cepa"><%= whisky.cepa %></p>
+                        <p class = "precio">$ <%= whisky.price %></p>     
                         <i class="fas fa-cart-plus"></i>            
                     </div>
                 <!-- </div> -->
             </article>
-            <article class="vinos-borde">
-                <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Dominio Malbec" class="images" width="100%"></a>
-                    <div class="product-description">
-                        <p class = "coleccion">Dominio</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$1700</p>       
-                        <i class="fas fa-cart-plus"></i>                   
-                    </div>
-                <!-- </div> -->
-            </article>
-            <article class="vinos-borde"> 
-                <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Trumpeter Malbec" class="images" width="100%"></a>
-                    <div class="product-description">
-                        <p class = "coleccion">Trumpeter</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$780</p>   
-                        <i class="fas fa-cart-plus"></i>                     
-                    </div>
-                <!-- </div> -->
-            </article>
-            <article class="vinos-borde">
-                <!-- <div class="vinos-borde"> -->
-                    <a href="/producto/product"><img src="/images/TrumpeterMalbec.png" alt = "Vino Trumpeter Malbec" class="images" width="100%"></a>
-                    <div class="product-description">
-                        <p class = "coleccion">Trumpeter</p>    
-                        <p class = "cepa">Malbec</p>
-                        <p class = "precio">$780</p>   
-                        <i class="fas fa-cart-plus"></i>                     
-                    </div>
-                <!-- </div> -->
-            </article>
+            <% counterWhisky++}else return}) %>
         </section>
     </main> 
     <%- include ('./partials/footer.ejs') %>

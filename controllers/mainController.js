@@ -4,9 +4,11 @@ const productModel = require('../models/productModel')
 
 const mainController = {
     home: function(req, res){
-        const category = 'vinos'
-        const winesList = productModel.findFiltered(category)
-        return res.render('index',{winesList})
+        const wineCategory = 'vinos'
+        const whiskyCategory = 'whiskies'
+        const winesList = productModel.findFiltered(wineCategory)
+        const whiskiesList = productModel.findFiltered(whiskyCategory)
+        return res.render('index',{winesList, whiskiesList})
     }    
 }
 module.exports = mainController;

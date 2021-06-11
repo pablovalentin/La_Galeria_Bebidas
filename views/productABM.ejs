@@ -14,41 +14,27 @@
         <table class="table">
             <tr>
                 <th>ID</th>
+                <th>Categoría</th>
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Acción</th>
             </tr>
-            <tr> <!-- Aca hacemos el for, para recorrer y cargar las variables en td -->
-                <td>1</td>
-                <td>Trumpeter</td>
-                <td>1018</td>
-                <td>50</td>
+            
+            <!-- Aca hacemos el for, para recorrer y cargar las variables en td -->
+            
+            <% productsList.forEach((product) => { %>
+            <tr>
+                <td><%= product.id %></td>
+                <td><%= product.category %></td>
+                <td><%= product.name %></td>
+                <td><%= product.price %></td>
+                <td><%= product.quantity %></td>
                 <td>
-                    <a href="/producto/3/edit"><i class="fas fa-edit"></i></a>
-                    <a href="/producto/3/delete"><i class="fas fa-trash"></i></a>
+                    <a href="/producto/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>
+                    <a href="/producto/<%= product.id %>/delete"><i class="fas fa-trash"></i></a>
                 </td>
-            </tr>
-            <tr> 
-                <td>1</td>
-                <td>Trumpeter</td>
-                <td>1018</td>
-                <td>50</td>
-                <td>
-                    <a href="/producto/3/edit"><i class="fas fa-edit"></i></a>
-                    <a href="/producto/3/delete"><i class="fas fa-trash"></i></a>
-                </td>
-            </tr>
-            <tr> 
-                <td>1</td>
-                <td>Trumpeter</td>
-                <td>1018</td>
-                <td>50</td>
-                <td>
-                    <a href="/producto/3/edit"><i class="fas fa-edit"></i></a>
-                    <a href="/producto/3/delete"><i class="fas fa-trash"></i></a>
-                </td>
-            </tr>
+            </tr><% }) %>
         </table>
         
         </main>

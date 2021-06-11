@@ -156,7 +156,8 @@ label h2 {
 }
 .control-form-product .seleccionar {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-end;
 }
 .control-form-product label {
   margin-bottom: 15px;

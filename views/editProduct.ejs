@@ -10,7 +10,7 @@
     <main>
         <!-- Formulario registro
         -->
-        <form action="/producto/<%= product.id %>?_method=PUT" method="POST" class="product-form">
+        <form action="/producto/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="product-form">
             
         
             <label><h2>MODIFICAR PRODUCTO</h2> </label>
@@ -40,9 +40,10 @@
                 <input type="text" name="quantity" id="quantity" value="<%= product.quantity %>" class="control" required>
             </div>
             <div class="control-form-product">
-                <label for="myfile">Foto del producto:</label>
+                <label for="image">Foto del producto:</label>
+                    <img src="<%= product.image %>" width="300" />
                 <div class="seleccionar">
-                    <input type="file" id="myfile" name="myfile" class="product-pic">
+                    <input type="file" id="image" name="image" class="product-pic">
                 </div>
             </div>
             <button type="submit" class="button-create">MODIFICAR PRODUCTO</button>
