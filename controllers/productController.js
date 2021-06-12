@@ -59,11 +59,18 @@ const productController = {
         const category = req.params.category
         const productsFiltered = productModel.findFiltered(category)
         res.render('category', { productsFiltered })
-    }/* ,
-    categoria: function(req,res){
-        const winesList = productModel.findAll()
-        res.render('category', { winesList })
-    } */
+    },
+    create: (req,res) => {
+        const {name, cepa, price, cata, sugerencia, category, quantity} = req.body;
+        const product = {name, cepa, price, cata, sugerencia, category, quantity}
+        const productCreated = productModel.create(product)        
+        res.redirect('/producto/detail/' + productCreated.id);
+    },
+    delete: (req,res) => {
+        const id = req.params.id;
+        productModel.delete(id);
+        res.redirect('/producto/productABM/');
+    }
 }
 
 module.exports = productController;

@@ -49,4 +49,22 @@ module.exports = {
         // Escribir el archivo
         fs.writeFileSync(this.filename, dataJson);
     },
+    create(product) {  /* Esto solo lo entendemos nosotros y dios */
+        product.id =  this.generateId();
+        products = this.readFile();
+        productsUpdated = [...products, product]
+        this.writeFile(productsUpdated)
+        console.log(product)
+        return product;
+    },
+    generateId() {
+        const product = this.readFile();
+        const lastProduct = product.pop();
+        return lastProduct.id + 1;
+    },
+    delete (id) {
+        const product = this.readFile();
+        const newProducts = product.filter(product => product.id != id);
+        this.writeFile(newProducts);       
+    }
 }

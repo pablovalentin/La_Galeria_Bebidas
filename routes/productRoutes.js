@@ -35,13 +35,18 @@ const upload = multer({ storage })
 //router.get('/product', productController.producto); remplazada por '/detail/:id'
 router.get('/detail/:id', productController.detail);
 router.get('/productABM', productController.ABMProducto);
-router.get('/:category', productController.filter);
-//router.get('/vinos', productController.categoria); reemplazada por '/:category'
 router.get('/newProduct', productController.nuevoProducto);
+router.get('/:category', productController.filter);
+
+//New
+router.post('/create',productController.create);
 
 // Update
 //router.get('/editProduct', productController.editarProducto);  reemplazada por ('/:id/edit'
 router.get('/:id/edit', productController.edit);
 router.put('/:id', upload.single('image'), productController.update);
+
+//Delete
+router.delete('/:id', productController.delete);
 
 module.exports = router;

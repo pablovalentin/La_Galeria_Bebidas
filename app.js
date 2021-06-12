@@ -10,7 +10,7 @@ const publicPath = path.resolve(__dirname, 'public');
 const method = require('method-override');
 
 
-app.listen(3000, () =>{
+app.listen(3001, () =>{
     console.log("Servidor corriendo en el puerto 3000");
 });
 app.use(express.json());

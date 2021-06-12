@@ -9,12 +9,21 @@
     <%- include ('./partials/header.ejs') %>
     <main>
         <!-- Formulario registro -->
-        <form action="/product" method="POST" class="product-form">
+        <form action="/producto/create" method="POST" class="product-form">
             <label><h2>AGREGAR PRODUCTO</h2> </label>
             <hr class="line-break" size="1" width="90%" color="#484747">  
             <div class="control-form-product">
+                <label for="category">Categoria:</label>
+                <select name="category" id="category" class="control" autofocus>
+                    <option value="wines">Vinos</option>
+                    <option value="whiskies">Whiskies</option>
+                    <option value="spirits">Spirits</option>
+                </select>
+<!--                 <input type="text" name="name" id="name" class="control" autofocus required> -->
+            </div>
+            <div class="control-form-product">
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" class="control" autofocus required>
+                <input type="text" name="name" id="name" class="control" required>
             </div>
             <div class="control-form-product">
                 <label for="cepa">Cepa:</label>

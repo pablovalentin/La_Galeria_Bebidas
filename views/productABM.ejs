@@ -9,7 +9,7 @@
     <main>
         <div class='admin-prod'>
             <h3>Administración de productos</h3>
-            <button class="buy-button" type="button">Nuevo</button>
+            <a href="/producto/newProduct"><button class="buy-button" type="button">Nuevo</button></a>
         </div>
         <table class="table">
             <tr>
@@ -32,7 +32,10 @@
                 <td><%= product.quantity %></td>
                 <td>
                     <a href="/producto/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>
-                    <a href="/producto/<%= product.id %>/delete"><i class="fas fa-trash"></i></a>
+                    <form action="/producto/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit"><i class="fas fa-trash"></i></button>
+                    </form>
+<!--                     <a href="/producto/<%= product.id %>/delete"><i class="fas fa-trash"></i></a> -->
                 </td>
             </tr><% }) %>
         </table>
