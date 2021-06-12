@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "image": "/images/01_Trumpeter-Reserve-Pinot-Grigio.jpeg",
     "name": "Trumpeter Reserve",
     "cepa": "Pinot",
     "sugerencia": "Carnes blancas como pollo o pavo. Pescados como el salmón o merluza. Mariscos. Comida india condimentada con Curry. Ensaladas.",
     "cata": "Amarillo cristalino, con matices verdosos y dorados. Sus aromas remiten a frutas blancas y citrus, con un fino toque de anís. Fresco y untuoso, su óptima acidez descubre un final de boca franco, de muy buena persistencia.",
-    "price": "1200",
-    "category": "vinos",
-    "quantity": "01"
+    "price": "1300",
+    "quantity": "01",
+    "image": "/images/01_Trumpeter-Reserve-Pinot-Grigio.jpeg",
+    "category": "vinos"
   },
   {
     "id": 2,
