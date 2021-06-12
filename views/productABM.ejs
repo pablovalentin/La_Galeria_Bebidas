@@ -32,8 +32,8 @@
                 <td><%= product.quantity %></td>
                 <td>
                     <a href="/producto/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>
-                    <form action="/producto/<%= product.id %>?_method=DELETE" method="POST">
-                        <button type="submit"><i class="fas fa-trash"></i></button>
+                    <form action="/producto/<%= product.id %>?_method=DELETE" method="POST" class="form-delete">
+                        <button type="submit" class="button-delete"><i class="fas fa-trash"></i></button>
                     </form>
 <!--                     <a href="/producto/<%= product.id %>/delete"><i class="fas fa-trash"></i></a> -->
                 </td>
