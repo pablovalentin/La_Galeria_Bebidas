@@ -159,8 +159,9 @@ a:hover {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: rgb(204, 198, 198);
-  padding: 3px;
+  /* background-color: rgb(204, 198, 198); */
+  /* padding: 3px; */
+  color: rgb(194, 151, 151)
 }
 
 .dropdown-burger:hover .dropdown-content {
@@ -169,7 +170,7 @@ a:hover {
 
 .dropdown-burger:hover .dropbtn {
   background-color: rgb(204, 198, 198);
-  padding: 3px;
+
 }
 .more-products {
   display: none;
@@ -224,7 +225,7 @@ main {
     font-size: 20px;
   }
   .nav-bar li {
-    padding: 5px;
+    padding: 7px;
     margin-top: -12px;
   }
   .product-list {
@@ -246,7 +247,7 @@ main {
     flex-wrap: wrap;
   }
   .nav-bar {
-    font-size: 24px;
+    font-size: 22px;
   }
   .user-links li {
     font-size: 26px;
