@@ -213,6 +213,12 @@ footer {
 main {
   margin-bottom: 34px;
 }
+.no-products {
+  padding: 22px 81px;
+}
+.no-products .message {
+  font-size: 16px
+}
 @media (min-width: 769px) {
   .div-burger {
     display: none;
@@ -222,10 +228,10 @@ main {
     justify-content: center;
     list-style: none;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
   }
   .nav-bar li {
-    padding: 7px;
+    padding: 1px 4px 3px 7px;
     margin-top: -12px;
   }
   .product-list {
@@ -247,7 +253,7 @@ main {
     flex-wrap: wrap;
   }
   .nav-bar {
-    font-size: 22px;
+    font-size: 20px;
   }
   .user-links li {
     font-size: 26px;
