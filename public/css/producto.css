@@ -85,7 +85,6 @@
 table,
 th,
 td {
-  border: 1px solid black;
   width: 70%;
   text-align: center;
   padding: 10px;
@@ -99,8 +98,12 @@ th {
   color: white;
 }
 
-tr:hover {
-  background-color: rgb(233, 204, 204);
+tr:hover td {
+  background-color: rgb(218, 144, 144);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(212, 208, 208);
 }
 
 .admin-prod {
@@ -118,7 +121,7 @@ tr:hover {
   color: darkslategrey;
 }
 .button-delete:hover {
-  color:rgb(194, 151, 151)
+  color: rgb(194, 151, 151);
 }
 /* .fa-trash:hover {
   color: rgb(194,151,151);
