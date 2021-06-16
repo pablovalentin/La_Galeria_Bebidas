@@ -9,7 +9,7 @@ const productController = {
     }, */
     nuevoProducto: function(req, res){
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
-        return res.render('newProduct')
+        return res.render('products/newProduct')
     },
     /* editarProducto: function(req, res){
         //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
@@ -17,12 +17,12 @@ const productController = {
     }, */
     ABMProducto: function(req, res){
         const productsList = productModel.findAll()
-        return res.render('productABM', {productsList})
+        return res.render('products/productABM', {productsList})
     },
     edit: function(req,res){
         const product = productModel.findByPk(req.params.id);
 
-        res.render('editProduct', {
+        res.render('products/editProduct', {
             product
         });
     },
@@ -53,12 +53,12 @@ const productController = {
         
         const productDetail = productModel.findByPk(id)
         
-        res.render('producto', { productDetail })
+        res.render('products/producto', { productDetail })
     },
     filter: function (req, res){
         const category = req.params.category
         const productsFiltered = productModel.findFiltered(category)
-        res.render('category', { productsFiltered })
+        res.render('products/category', { productsFiltered })
     },
     create: (req,res) => {
         const {name, cepa, price, cata, sugerencia, category, quantity} = req.body;

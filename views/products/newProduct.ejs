@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include ('./partials/head.ejs') %>
+    <%- include ('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/producto.css">    
     
 </head>
 <body> 
-    <%- include ('./partials/header.ejs') %>
+    <%- include ('../partials/header.ejs') %>
     <main>
         <!-- Formulario registro -->
         <form action="/producto/create" method="POST" class="product-form">
@@ -54,6 +54,6 @@
             <button type="submit" class="button-create">AGREGAR PRODUCTO</button>
         </form>
     </main>
-    <%- include ('./partials/footer.ejs') %>
+    <%- include ('../partials/footer.ejs') %>
 </body>
 </html>
