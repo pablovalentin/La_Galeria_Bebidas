@@ -22,6 +22,10 @@ a:hover {
   display: none;
 }
 
+.leyenda {
+  text-align: center;
+}
+
 .user-links ul {
   display: flex;
   justify-content: center;
@@ -161,7 +165,7 @@ a:hover {
 .dropdown:hover .dropbtn {
   /* background-color: rgb(204, 198, 198); */
   /* padding: 3px; */
-  color: rgb(194, 151, 151)
+  color: rgb(194, 151, 151);
 }
 
 .dropdown-burger:hover .dropdown-content {
@@ -170,7 +174,6 @@ a:hover {
 
 .dropdown-burger:hover .dropbtn {
   background-color: rgb(204, 198, 198);
-
 }
 .more-products {
   display: none;
@@ -217,7 +220,7 @@ main {
   padding: 22px 81px;
 }
 .no-products .message {
-  font-size: 16px
+  font-size: 16px;
 }
 @media (min-width: 769px) {
   .div-burger {

@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
         const now = Date.now() // 32173821637218631
 
         // generar un nombre para nuestro archivo
-        //const filename = `${now}${extension}`
+        //const filename = `${now}${extension}` es la sintaxis nueva par alo que esta abajo.
         const filename = now + extension
         
         // ejecutamos callback con null (error) y el nombre del archivo
@@ -39,7 +39,7 @@ router.get('/newProduct', productController.nuevoProducto);
 router.get('/:category', productController.filter);
 
 //New
-router.post('/create',productController.create);
+router.post('/create', upload.single('image'), productController.create);
 
 // Update
 //router.get('/editProduct', productController.editarProducto);  reemplazada por ('/:id/edit'

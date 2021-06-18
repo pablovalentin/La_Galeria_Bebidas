@@ -62,9 +62,12 @@ const productController = {
     },
     create: (req,res) => {
         const {name, cepa, price, cata, sugerencia, category, quantity} = req.body;
-        const product = {name, cepa, price, cata, sugerencia, category, quantity}
+        // Agregamos la imagen del producto utilizando Multer
+        const {file} = req; // Esta es la info del archivo 
+        const image = '/images/' + file.filename// Esta es la ruta al mismo.
+        const product = {image, name, cepa, price, cata, sugerencia, category, quantity}
         const productCreated = productModel.create(product)        
-        res.redirect('/producto/detail/' + productCreated.id);
+        res.redirect('/producto/productABM/');
     },
     delete: (req,res) => {
         const id = req.params.id;

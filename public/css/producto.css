@@ -213,11 +213,15 @@ a:hover {
   color: rgb(194, 151, 151);
 }
 
-.control-form-product input, .control-form-product select, .control-form-product textarea{
+.control-form-product input,
+.control-form-product select,
+.control-form-product textarea {
   outline: none;
   max-width: 350px;
 }
-.control-form-product input:focus, .control-form-product select:focus, .control-form-product textarea:focus {
+.control-form-product input:focus,
+.control-form-product select:focus,
+.control-form-product textarea:focus {
   border: 1px solid #c66;
 }
 
