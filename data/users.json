@@ -15,8 +15,8 @@
     },
     {
       "id": 3,
-      "last-name": "Nahir",
-      "apellido": "Arrejoria",
+      "name": "Nahir",
+      "last-name": "Arrejoria",
       "email": "nahirarrejoria@gmail.com",
       "password": "1234"
     }
