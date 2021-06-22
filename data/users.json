@@ -1,21 +1,21 @@
 [
     {
       "id": 1,
-      "nombre": "Nicolas",
-      "apellido": "Castellano",
+      "name": "Nicolas",
+      "last-name": "Castellano",
       "email": "correoanico@gmail.com",
       "password": "1234"
     },
     {
       "id": 2,
-      "nombre": "Pablo",
-      "apellido": "Valentin",
+      "name": "Pablo",
+      "last-name": "Valentin",
       "email": "pabovalentin@gmail.com",
       "password": "1234"
     },
     {
       "id": 3,
-      "nombre": "Nahir",
+      "last-name": "Nahir",
       "apellido": "Arrejoria",
       "email": "nahirarrejoria@gmail.com",
       "password": "1234"
