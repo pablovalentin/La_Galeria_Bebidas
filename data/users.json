@@ -11,13 +11,13 @@
     "name": "Pablo",
     "last-name": "Valentín",
     "email": "pablovalentin09@gmail.com",
-    "password": "1234"
+    "password": "5678"
   },
   {
     "id": 3,
     "name": "Nahir",
     "last-name": "Arrejoria",
     "email": "nahirarrejoria@gmail.com",
-    "password": "1234"
+    "password": "9012"
   }
 ]
