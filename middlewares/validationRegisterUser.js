@@ -1,6 +1,6 @@
 const { body } = require('express-validator')
 const userModel = require('../models/usersModel')
-const { isFileImage } = require('../helpers/file')
+//const { isFileImage } = require('../helpers/file')
 //revisar qué sirve
 const validationRegisterUser = [
     body('name')
@@ -30,26 +30,23 @@ const validationRegisterUser = [
         /* .isStrongPassword()
         .withMessage('Por favor ingrese un password etc') */
         ,
-    body('image')
+    /* body('image')
         .custom((value, { req }) => {
             const { file } = req
-
             // chequea que haya cargado imagen
             if (!file) {
                 // esto es como si hicieramos .withMessage('Seleccione un archivo')
-                throw new Error('Por favor ingrese una imagen')
+                throw new Error('Por favor ingrese una foto de perfil.')
             }
-
-
             if (!isFileImage(file.originalname)) {
                 // disparar error
-                throw new Error('Por favor ingrese una archivo que sea una imagen')
+                throw new Error('Por favor ingrese un archivo válido.')
             }
 
             // chequea que la extensión sea la correcta
             
             return true
-        })
+        }) */
 ]
 
 module.exports = validationRegisterUser
