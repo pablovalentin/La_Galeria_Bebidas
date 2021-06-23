@@ -1,23 +1,23 @@
 [
-    {
-      "id": 1,
-      "name": "Nicolas",
-      "last-name": "Castellano",
-      "email": "correoanico@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": 2,
-      "name": "Pablo",
-      "last-name": "Valentín",
-      "email": "pablovalentin09@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": 3,
-      "name": "Nahir",
-      "last-name": "Arrejoria",
-      "email": "nahirarrejoria@gmail.com",
-      "password": "1234"
-    }
+  {
+    "id": 1,
+    "name": "Nicolas",
+    "last-name": "Castellano",
+    "email": "correoanico@gmail.com",
+    "password": "1234"
+  },
+  {
+    "id": 2,
+    "name": "Pablo",
+    "last-name": "Valentín",
+    "email": "pablovalentin09@gmail.com",
+    "password": "1234"
+  },
+  {
+    "id": 3,
+    "name": "Nahir",
+    "last-name": "Arrejoria",
+    "email": "nahirarrejoria@gmail.com",
+    "password": "1234"
+  }
 ]
