@@ -21,19 +21,11 @@
     "password": "9012"
   },
   {
-    "name": "matias",
-    "lastName": "teclado",
-    "email": "teclado@gmail.com",
+    "name": "usuario",
+    "lastName": "nuevo",
+    "email": "usuarionuevo@gmail.com",
     "password": "1234",
-    "image": "/images/profile/1624453839701.jpg",
+    "image": "/images/profile/1624468375763.jpg",
     "id": 4
-  },
-  {
-    "name": "matias2",
-    "lastName": "teclado2",
-    "email": "teclado2@gmail.com",
-    "password": "BSjzc57PrNbMBLC",
-    "image": "/images/profile/1624453944598.jpg",
-    "id": 5
   }
 ]
