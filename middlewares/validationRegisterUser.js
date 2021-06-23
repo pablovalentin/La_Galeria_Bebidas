@@ -5,26 +5,27 @@ const { isFileImage } = require('../helpers/file')
 const validationRegisterUser = [
     body('name')
         .notEmpty()
-        .withMessage('Por favor ingrese su nombre'),
+        .withMessage('Por favor ingrese su nombre.'),
+    body('last-name')
+        .notEmpty()
+        .withMessage('Por favor ingrese su apellido.'),    
     body('email')
         .notEmpty()
-        .withMessage('Por favor ingrese su e-mail')
+        .withMessage('Por favor ingrese su e-mail.')
         .isEmail()
-        .withMessage('No es en formato e-mail')
+        .withMessage('No es en formato e-mail.')
         .bail()
         .custom((email) => {
             const userFound = userModel.findByField('email', email)
-
             if (userFound) {
                 return false
             }
-
             return true
         })
-        .withMessage('El usuario ya existe'),
+        .withMessage('El usuario ya existe.'),
     body('password')
         .notEmpty()
-        .withMessage('Por favor ingrese su password')
+        .withMessage('Por favor ingrese una contraseña.')
         .bail()
         /* .isStrongPassword()
         .withMessage('Por favor ingrese un password etc') */
