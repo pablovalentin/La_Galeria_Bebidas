@@ -1,5 +1,6 @@
 const fs = require('fs')
 const { validationResult } = require('express-validator')
+const usersModel = require('../models/usersModel')
 const path = require('path');
 const viewsPath = path.join(__dirname, '../')
 
@@ -28,13 +29,25 @@ const usersController = {
         return  
         } 
         // Crear el objeto usuario
-        const { name, email, password } = req.body;
+        const { name, lastName, email, password } = req.body;
 
          // dentro de req.file va a venir la información del archivo
         const { file } = req
         
          // nuestra ruta al archivo
         const image = file.filename
+
+        const user = {
+            name,
+            lastName,
+            email,
+            password,
+            image: '/images/profile/' + image,
+        }
+        
+        usersModel.create(user);
+
+        res.redirect('/user/login');
     }
 }
 

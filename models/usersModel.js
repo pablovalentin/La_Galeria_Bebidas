@@ -9,7 +9,8 @@ module.exports = {
         const usersJson = fs.readFileSync(usersPath, 'utf-8');
         // Parsear la informacion
         return JSON.parse(usersJson);
-    },findAll() {
+    },
+    findAll() {
         // Leer nuestra informacion
         const users = this.readFile();
         // devolver la info
@@ -30,5 +31,27 @@ module.exports = {
         const userFound = users.find(user => user[field] == value);
         // Devolvemos el user
         return userFound;
+    },
+    generateId() {
+        const users = this.readFile();
+        const lastuser = users.pop();
+        return lastuser ? lastuser.id + 1 : 0;
+    },
+    create(user) {
+        user.id = this.generateId();
+
+        // Leer el archivo
+        const users = this.readFile();
+        // Agregar nuestro usera al array de useras
+        const usersUpdated = [...users, user];
+        // Volver a escribir el archivo con el nuevo array de useras
+        this.writeFile(usersUpdated);
+        return user;
+    },
+    writeFile(newData) {
+        // Pasar la data a json
+        const dataJson = JSON.stringify(newData, null, 2);
+        // Escribir el archivo
+        fs.writeFileSync(this.filename, dataJson);
     }
 }

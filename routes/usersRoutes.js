@@ -35,5 +35,5 @@ const upload = multer({ storage })
 router.get('/login', usersController.login);
 router.get('/registro', usersController.registro);
 
-router.post('/registro', upload.single('image'),validationRegisterUser, usersController.processRegister)
+router.post('/registro', upload.single('profileImage'),validationRegisterUser, usersController.processRegister)
 module.exports = router;
