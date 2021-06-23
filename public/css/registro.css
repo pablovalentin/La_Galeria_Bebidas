@@ -59,7 +59,7 @@ a:active, a:hover {
     color:red;
     font-weight: 600;
 }
-.control-form-register input, .login-form input {
+.control-form-register input, .login-form input, .control-form-register file{
     outline: none;
 }
 .control-form-register input:focus, .login-form input:focus {
