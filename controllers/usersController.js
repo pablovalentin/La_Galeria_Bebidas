@@ -15,7 +15,9 @@ const usersController = {
     },
     processRegister: function (req,res){
         const formValidation = validationResult(req)
+        console.log(formValidation)
         const oldValues = req.body
+        console.log(oldValues)
         
         if (!formValidation.isEmpty()) {
             // borrar imagen
@@ -23,10 +25,9 @@ const usersController = {
                 // primero chequeamos que exista
                 fs.unlinkSync(req.file.path)
             }
-            
-
+            console.log('hay errores')            
             // tenemos errores
-            res.render('users/register', { oldValues, errors: formValidation.mapped() })
+            res.render('users/registro', { oldValues, errors: formValidation.mapped() })
         return  
         } 
         // Crear el objeto usuario

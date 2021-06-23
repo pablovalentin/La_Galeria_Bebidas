@@ -13,28 +13,45 @@
             <label><h2>CREAR CUENTA</h2> </label>
             <div class="control-form-register">
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" placeholder="Nombre" class="control" autofocus required>
+                <input type="text" name="name" id="name" placeholder="Nombre" class="control" value="<%= locals.oldValues && oldValues.name %>" autofocus>
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-message"><%= errors.name.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-register">
-                <label for="last-name">Apellido:</label>
-                <input type="text" name="last-name" id="last-name" placeholder="Apellido" class="control" required>
+                <label for="lastName">Apellido:</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Apellido" class="control">
+                <% if (locals.errors && errors.lastName) { %>
+                    <span class="error-message"><%= errors.lastName.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-register">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" class="control" required>
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" class="control">
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-message"><%= errors.email.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-register">
                 <label for="password">Contraseña:</label>
-                <input type="password" name="pasword" id="password" placeholder="Contraseña" class="control" required>
+                <input type="password" name="pasword" id="password" placeholder="Contraseña" class="control">
+                <% if (locals.errors && errors.password) { %>
+                    <span class="error-message"><%= errors.password.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-register">
-                <label for="password-confirmation">Confirmar contraseña:</label>
-                <input type="password" name="pasword-confirmation" id="password-confirmation" placeholder="Contraseña" class="control" required>
-                <span class="error-message">Las contraseñas no coinciden</span>
+                <label for="passwordConfirmation">Confirmar contraseña:</label>
+                <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Contraseña" class="control">
+                <% if (locals.errors && errors.passwordConfirmation) { %>
+                <span class="error-message"><%= errors.passwordConfirmation.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-register">
-                <label for="profile-image">Foto de perfil:</label>
-                    <input type="file" id="profile-image" name="profile-image" class="control-pic">
+                <label for="profileImage">Foto de perfil:</label>
+                <input type="file" id="profileImage" name="profileImage" class="control-pic">
+                <% if (locals.errors && errors.profileImage) { %>
+                    <span class="error-message"><%= errors.profileImage.msg %></span>
+                <% } %>
             </div>
             <button type="submit" class="button-create">CREAR CUENTA</button>
             <hr class="line-break" size="1" width="90%" color="#484747">  
