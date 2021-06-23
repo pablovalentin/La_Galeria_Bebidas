@@ -48,6 +48,19 @@ En general queriamos comentar que nos resulto ameno trabajar juntos.<br>
   Demorar en el inicio de las tareas para sumar detalles a la entrega. 
 * <h3> Dejar de hacer </h3>
   Consideramos que este sprint estuvo bien resuelto en líneas generales y la idea es continuar por este camino. 
+  
+  <h1> Retro Sprint 4</h1>
+
+* <h3> Comenzar a hacer </h3>
+  Comenzar a trabajar sobre la misma rama, al mismo tiempo.
+* <h3> Hacer más </h3>
+  Segiur aprovechando el tiempo de práctica en las clases para pulir detalles y dudas en grupo.
+* <h3> Continuar haciendo </h3>
+  Reunirnos para definir lineamientos generales de las tareas.
+* <h3> Hacer menos </h3>
+  Cambios en el puerto de la app. sin documentar el mismo.
+* <h3> Dejar de hacer </h3>
+  Consideramos que este sprint estuvo bien resuelto en líneas generales y la idea es continuar por este camino. 
       
       
  
