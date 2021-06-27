@@ -1,7 +1,17 @@
 const express = require('express');
 const path = require('path');
+const session = require('express-session')
+
+const config = require('./config/config')
 
 const app = express();
+
+// middlewares
+
+app.use(session({
+    secret: config.sessionSecret
+  }))
+
 let rutasUsers = require ('./routes/usersRoutes.js')
 let rutasMain = require ('./routes/mainRoutes.js')
 let rutasShoppingCart = require ('./routes/shoppingCartRoutes.js')

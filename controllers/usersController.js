@@ -19,7 +19,20 @@ const usersController = {
             return res.render('users/login', { oldValues, errors: formValidation.mapped() })
         } 
 
-        //y aca?
+        // lo que viene del login
+        const { email, remember } = req.body
+        
+        // le pedimos al modelo el usuario
+        const user = usersModel.findByField('email', email)
+        //req.session = {}
+
+        // cargamos los datos del usuario en la sesión
+
+        // le sacamos el password
+        delete user.password
+
+        // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
+        req.session.logged = user
 
         // redirigimos al profile
         res.redirect('/users/profile')
