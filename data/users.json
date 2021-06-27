@@ -27,5 +27,13 @@
     "password": "1234",
     "image": "/images/profile/1624468375763.jpg",
     "id": 4
+  },
+  {
+    "name": "Nico",
+    "lastName": "Castellano",
+    "email": "nuevo@gmail.com",
+    "password": "$2a$10$JL8TaoCRb2zSAqvxfoUHWOQg.2wBXcVj1KMlEcYbuuhsEs7UqajFu",
+    "image": "/images/profile/1624819663571.png",
+    "id": 5
   }
 ]
