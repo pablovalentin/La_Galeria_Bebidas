@@ -80,7 +80,7 @@ const usersController = {
         
         usersModel.create(user);
 
-        res.redirect('/user/login');
+        res.redirect('/users/login');
     },
     
 }
