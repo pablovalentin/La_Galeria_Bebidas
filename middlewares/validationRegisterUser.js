@@ -27,7 +27,10 @@ const validationRegisterUser = [
     body('password')
         .notEmpty()
         .withMessage('Por favor ingrese una contraseña.')
-        .bail(),
+        .bail()
+        /* .isStrongPassword()
+        .whitMessage ('Ingrese una contraseña valida.') */
+        ,
     body('passwordConfirmation')
         .custom((value, {req}) => {
             const {password} = req.body
