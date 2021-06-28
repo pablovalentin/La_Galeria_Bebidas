@@ -35,7 +35,7 @@ const usersController = {
         req.session.logged = user
 
         // redirigimos al profile
-        res.redirect('/users/profile')
+        res.redirect('users/profile')
     },
     registro: function(req, res) {
         //res.sendFile(path.resolve(viewsPath, './views/registro.ejs'))
@@ -80,7 +80,7 @@ const usersController = {
         
         usersModel.create(user);
 
-        res.redirect('/users/login');
+        res.redirect('users/login');
     },
     
 }
