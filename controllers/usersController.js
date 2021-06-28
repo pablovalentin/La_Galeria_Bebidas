@@ -16,6 +16,7 @@ const usersController = {
         const oldValues = req.body
 
         if (!formValidation.isEmpty()) {
+            console.log('hay errores')
             return res.render('users/login', { oldValues, errors: formValidation.mapped() })
         } 
 
@@ -35,7 +36,7 @@ const usersController = {
         req.session.logged = user
 
         // redirigimos al profile
-        res.redirect('users/profile')
+        res.redirect('/')
     },
     registro: function(req, res) {
         //res.sendFile(path.resolve(viewsPath, './views/registro.ejs'))
@@ -80,7 +81,7 @@ const usersController = {
         
         usersModel.create(user);
 
-        res.redirect('users/login');
+        res.redirect('/user/login');
     },
     
 }

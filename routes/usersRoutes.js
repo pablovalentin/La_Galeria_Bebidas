@@ -38,7 +38,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-router.get('/login', guestMiddleware,usersController.login);
+router.get('/login',guestMiddleware, usersController.login);
 router.post('/login', guestMiddleware, validationLoginUser, usersController.processLogin);
 
 router.get('/registro', guestMiddleware, usersController.registro);
