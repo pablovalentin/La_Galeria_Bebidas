@@ -1,16 +1,26 @@
 const express = require('express');
 const path = require('path');
 const session = require('express-session')
-
+const cookieParser = require('cookie-parser')
 const config = require('./config/config')
 
 const app = express();
+
+const { sessionSecret, cookiesSecret} = require('./config/config')
 
 // middlewares
 
 app.use(session({
     secret: config.sessionSecret
   }))
+
+app.use(cookieParser(cookiesSecret))
+
+const cookiesSessionMiddleware = require('./middlewares/cookiesSessionMiddleware')
+const sessionToLocals = require('./middlewares/sessionToLocals')
+
+app.use(cookiesSessionMiddleware)
+app.use(sessionToLocals)
 
 let rutasUsers = require ('./routes/usersRoutes.js')
 let rutasMain = require ('./routes/mainRoutes.js')

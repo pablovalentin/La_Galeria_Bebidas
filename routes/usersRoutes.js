@@ -46,7 +46,7 @@ router.post('/registro', guestMiddleware, upload.single('profileImage'),validati
 
 
 //comento porque me da error
-/* router.get('/profile', authMiddleware, usersController.profile) */
-/* router.get('/logout', authMiddleware, usersController.logout) */
+router.get('/profile', authMiddleware, usersController.profile)
+router.get('/logout', authMiddleware, usersController.logout)
 
 module.exports = router;

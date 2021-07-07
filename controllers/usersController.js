@@ -2,6 +2,9 @@ const fs = require('fs')
 const { validationResult } = require('express-validator')
 const bcrypt = require ('bcryptjs');
 const usersModel = require('../models/usersModel')
+
+const { maxAgeUserCookie } = require('../config/config')
+
 const path = require('path');
 const viewsPath = path.join(__dirname, '../')
 
@@ -34,6 +37,14 @@ const usersController = {
 
         // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
         req.session.logged = user
+
+        // guardamos un dato de nuestro usuario en la sesión (email, user_id)
+        if (remember) {
+            // clave
+            res.cookie('user', user.id, {
+                maxAge: maxAgeUserCookie
+            })
+        }
 
         // redirigimos al profile
         res.redirect('/')
@@ -83,7 +94,17 @@ const usersController = {
 
         res.redirect('/user/login');
     },
-    
+    profile: (req, res) => {
+        res.render('users/profile')
+    },
+
+    logout: (req, res) => {
+        // borrar session y cookie
+        req.session.destroy()
+        res.clearCookie('user')
+        
+        res.redirect('/')
+    }
 }
 
 module.exports = usersController;
