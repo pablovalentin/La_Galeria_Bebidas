@@ -11,8 +11,8 @@ const viewsPath = path.join(__dirname, '../')
 const usersController = {
     login: function(req, res){
         //res.sendFile(path.resolve(viewsPath, './views/login.ejs'))
-        return res.render('users/login')
         
+        return res.render('users/login')      
     },
     processLogin: (req, res) => {
         const formValidation = validationResult(req)
@@ -47,7 +47,7 @@ const usersController = {
         }
 
         // redirigimos al profile
-        res.redirect('/')
+        res.redirect('/user/profile')
     },
     registro: function(req, res) {
         //res.sendFile(path.resolve(viewsPath, './views/registro.ejs'))

@@ -18,9 +18,13 @@
                     <div class="dropdown">
                         <button class="dropbtn"><i class="fas fa-user"></i></button>
                         <div class="dropdown-content">
-                            <a href="/user/login">Login</a>     
-                            <a href="/user/registro">Registro</a>
-                            
+                            <% if (locals.logged) { %> 
+                                <a href="/user/logout">Logout</a>     
+                                <a href="/user/profile">Perfil</a>
+                            <% } else { %>
+                                <a href="/user/login">Login</a>     
+                                <a href="/user/registro">Registro</a>
+                            <% } %>                               
                         </div>
                     </div> 
                 </li>

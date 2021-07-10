@@ -25,10 +25,9 @@ const storage = multer.diskStorage({
         const extension = path.extname(file.originalname) // .jpg
 
         // generamos un identificador único a partir de la fecha
-        const now = Date.now() // 32173821637218631
+        const now = Date.now() 
 
         // generar un nombre para nuestro archivo
-        //const filename = `${now}${extension}` es la sintaxis nueva par alo que esta abajo.
         const filename = now + extension
         
         // ejecutamos callback con null (error) y el nombre del archivo
@@ -44,9 +43,7 @@ router.post('/login', guestMiddleware, validationLoginUser, usersController.proc
 router.get('/registro', guestMiddleware, usersController.registro);
 router.post('/registro', guestMiddleware, upload.single('profileImage'),validationRegisterUser, usersController.processRegister)
 
-
-//comento porque me da error
 router.get('/profile', authMiddleware, usersController.profile)
-router.get('/logout', authMiddleware, usersController.logout)
+router.post('/logout', authMiddleware, usersController.logout)
 
 module.exports = router;
