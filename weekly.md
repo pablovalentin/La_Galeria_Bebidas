@@ -7,3 +7,16 @@
 <h3>* Breve repaso general por las tareas finalizadas</h3>
 <h3>* Breve discución sobre lo beneficioso que fué poder realizar avances del proyecto en clase.</h3>
 <h3>* No se asignaron nuevas tareas, ya que el sprint estaba finalizado.</h3>
+
+<h1>Weekly 20-06</h1>
+<h3>* Repaso general por las tareas finalizadas.</h3>
+<h3>* División de tareas para el sprint.</h3>
+
+<h1>Weekly 27-06</h1>
+<h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
+<h3>* Consultas de dudas.</h3>
+
+<h1>Weekly 04-07</h1>
+<h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
+<h3>* Pruebas en conjunto del proceso.</h3>
+
