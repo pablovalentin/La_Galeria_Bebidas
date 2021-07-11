@@ -44,7 +44,6 @@ router.get('/registro', guestMiddleware, usersController.registro);
 router.post('/registro', guestMiddleware, upload.single('profileImage'),validationRegisterUser, usersController.processRegister)
 
 router.get('/profile', authMiddleware, usersController.profile)
-//router.post('/logout', authMiddleware, usersController.logout)
 router.get('/logout', usersController.logout)
 
 module.exports = router
