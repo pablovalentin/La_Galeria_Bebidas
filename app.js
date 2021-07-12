@@ -18,6 +18,7 @@ app.use(cookieParser(cookiesSecret))
 
 const cookiesSessionMiddleware = require('./middlewares/cookiesSessionMiddleware')
 const sessionToLocals = require('./middlewares/sessionToLocals')
+const notFoundMiddleware = require('./middlewares/notFoundMiddleware')
 
 app.use(cookiesSessionMiddleware)
 app.use(sessionToLocals)
@@ -52,3 +53,5 @@ app.use('/carrito', rutasShoppingCart);
 app.use('/producto', rutasProduct);
 
 // No olvidarse esto para que la data se envie correctamente desde un formulario
+// error handler
+app.use(notFoundMiddleware)

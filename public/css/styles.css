@@ -185,7 +185,9 @@ footer {
   display: flex;
   justify-content: space-around;
 }
-
+.error404 {
+  text-align: center;
+}
 .logo-footer {
   max-width: 200px;
 }

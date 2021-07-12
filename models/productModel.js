@@ -54,7 +54,7 @@ module.exports = {
         products = this.readFile();
         productsUpdated = [...products, product]
         this.writeFile(productsUpdated)
-        console.log(product)
+        //console.log(product)
         return product;
     },
     generateId() {
