@@ -30,9 +30,15 @@ const publicPath = path.resolve(__dirname, 'public');
 const method = require('method-override');
 
 
-app.listen(3000, () =>{
+/* app.listen(3000, () =>{
     console.log("Servidor corriendo en el puerto 3000");
+}); Comentando el servidor local */
+
+/* Configurando para Heroku */
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Servidor corriendo correctamente')
 });
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(method('_method'));
