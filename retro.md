@@ -62,6 +62,17 @@ En general queriamos comentar que nos resulto ameno trabajar juntos.<br>
 * <h3> Dejar de hacer </h3>
   Consideramos que este sprint estuvo bien resuelto en líneas generales y la idea es continuar por este camino. 
       
-      
+    <h1> Retro Sprint 5</h1>
+* <h3> Comenzar a hacer </h3>
+  Brainstorming para ajustar el front-end del sitio. 
+* <h3> Hacer más </h3>
+  .
+* <h3> Continuar haciendo </h3>
+  
+* <h3> Hacer menos </h3>
+  
+* <h3> Dejar de hacer </h3>
+       
+
  
 
