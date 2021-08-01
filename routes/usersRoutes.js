@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
         cb(null, detinationPath)
     },
     filename: (req, file, cb) => {
-        console.log('file', file)
+        //console.log('file', file)
         // El nombre del archivo original es: file.originalname
         const extension = path.extname(file.originalname) // .jpg
 
