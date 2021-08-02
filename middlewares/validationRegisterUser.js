@@ -1,4 +1,5 @@
 const { body } = require('express-validator')
+//FIXME: Modelo viejo sin sequelize
 const userModel = require('../models/usersModel')
 const { isFileImage } = require('../helpers/file')
 
@@ -16,6 +17,7 @@ const validationRegisterUser = [
         .isEmail()
         .withMessage('No es en formato e-mail.')
         .bail()
+//FIXME: Modelo viejo sin sequelize
         .custom((email) => {
             const userFound = userModel.findByField('email', email)
             if (userFound) {

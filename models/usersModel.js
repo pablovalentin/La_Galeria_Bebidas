@@ -18,18 +18,16 @@ module.exports = {
     },
     findByPk(id) {
         const users = this.readFile();
-        // Filtrar por el ID
+        
         const userFound = users.find(user => user.id == id);
-        // Devolvemos el user
+        
         return userFound;
     },
     findByField(field, value) {
         const users = this.readFile();
-        // Filtrar por el [field]
 
-        // [] los usamos para que sea dinámica el nombre de la propiedad
         const userFound = users.find(user => user[field] == value);
-        // Devolvemos el user
+       
         return userFound;
     },
     generateId() {
@@ -40,18 +38,17 @@ module.exports = {
     create(user) {
         user.id = this.generateId();
 
-        // Leer el archivo
         const users = this.readFile();
-        // Agregar nuestro usera al array de useras
+
         const usersUpdated = [...users, user];
-        // Volver a escribir el archivo con el nuevo array de useras
+
         this.writeFile(usersUpdated);
         return user;
     },
     writeFile(newData) {
-        // Pasar la data a json
+ 
         const dataJson = JSON.stringify(newData, null, 2);
-        // Escribir el archivo
+
         fs.writeFileSync(this.filename, dataJson);
     }
 }
