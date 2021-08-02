@@ -2,7 +2,8 @@ const fs = require('fs')
 const { validationResult } = require('express-validator')
 const bcrypt = require ('bcryptjs');
 const usersModel = require('../models/usersModel')
-
+// FIXME: CRUD DB sprint 06, requerir modelos users de DB
+/* const { User } = requiere ('../database/models') */
 const { maxAgeUserCookie } = require('../config/config')
 
 const path = require('path');
@@ -10,7 +11,6 @@ const viewsPath = path.join(__dirname, '../')
 
 const usersController = {
     login: function(req, res){
-        //res.sendFile(path.resolve(viewsPath, './views/login.ejs'))
         
         return res.render('users/login')      
     },
@@ -19,38 +19,47 @@ const usersController = {
         const oldValues = req.body
 
         if (!formValidation.isEmpty()) {
-            //console.log('hay errores')
             return res.render('users/login', { oldValues, errors: formValidation.mapped() })
         } 
 
-        // lo que viene del login
         const { email, remember } = req.body
         
-        // le pedimos al modelo el usuario
-        const user = usersModel.findByField('email', email)
-        //req.session = {}
+/*         //FIXME: CRUD DB sprint 06, requerir modelos users de DB
+        User.findOne({
+            where: {
+                email
+            }
+        })
+            .then ((user) => {
+                delete user.password
 
-        // cargamos los datos del usuario en la sesión
-
-        // le sacamos el password
-        delete user.password
-
-        // cargamos dentro de la sesión la propieda logged con el usuario (menos el password)
         req.session.logged = user
 
-        // guardamos un dato de nuestro usuario en la sesión (email, user_id)
         if (remember) {
-            // clave
             res.cookie('user', user.id, {
                 maxAge: maxAgeUserCookie
             })
         }
 
-        // redirigimos al profile
+        res.redirect('/user/profile')
+    },
+    }), */
+        //Eliminar cuando este preparado el sequelize
+        const user = usersModel.findByField('email', email)
+
+        delete user.password
+
+        req.session.logged = user
+
+        if (remember) {
+            res.cookie('user', user.id, {
+                maxAge: maxAgeUserCookie
+            })
+        }
+
         res.redirect('/user/profile')
     },
     registro: function(req, res) {
-        //res.sendFile(path.resolve(viewsPath, './views/registro.ejs'))
         return res.render('users/registro')
     },
     processRegister: function (req,res){
@@ -58,28 +67,19 @@ const usersController = {
         const oldValues = req.body
         
         if (!formValidation.isEmpty()) {
-            // borrar imagen
             if (req.file) {
-                // primero chequeamos que exista
                 fs.unlinkSync(req.file.path)
             }
-            // tenemos errores
             res.render('users/registro', { oldValues, errors: formValidation.mapped() })
         return  
         } 
 
-        //chequear que no exista en la bd  
-
-        // Crear el objeto usuario
         const { name, lastName, email, password } = req.body;
 
-         // dentro de req.file va a venir la información del archivo
         const { file } = req
         
-         // nuestra ruta al archivo
         const image = file.filename
 
-        //hashear el password
         const haspassword = bcrypt.hashSync (password)
 
         const user = {
@@ -90,8 +90,15 @@ const usersController = {
             image: '/images/profile/' + image,
         }
         
-        usersModel.create(user);
+    //FIXME: CRUD DB sprint 06 refactor creacion de usuario
+    /*     User.create (user)
+            .then(()=> {
+                res.redirect('/user/login')
+            }) */
 
+    //Eliminar cuando este preparado el sequelize
+        usersModel.create(user);
+    //Eliminar cuando este preparado el sequelize
         res.redirect('/user/login');
     },
     profile: (req, res) => {
@@ -99,7 +106,7 @@ const usersController = {
     },
 
     logout: (req, res) => {
-        // borrar session y cookie
+
         req.session.destroy()
         res.clearCookie('user')
         
