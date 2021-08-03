@@ -1,8 +1,6 @@
 const fs = require('fs')
 const { validationResult } = require('express-validator')
 const bcrypt = require ('bcryptjs');
-/* const usersModel = require('../models/usersModel') */
-// FIXME: CRUD DB sprint 06, requerir modelos users de DB
 const { User } = require ('../database/models')
 const { maxAgeUserCookie } = require('../config/config')
 
@@ -24,7 +22,6 @@ const usersController = {
 
         const { email, remember } = req.body
         
-        //FIXME: CRUD DB sprint 06, requerir modelos users de DB
         User.findOne({
             where: {
                 email
@@ -94,16 +91,10 @@ const usersController = {
             roleID: 1
         }
         
-    //FIXME: CRUD DB sprint 06 refactor creacion de usuario
         User.create (user)
             .then(()=> {
                 res.redirect('/user/login')
             })
-
-    //Eliminar cuando este preparado el sequelize
-        //usersModel.create(user);
-    //Eliminar cuando este preparado el sequelize
-       /*  res.redirect('/user/login');*/
     },
     profile: (req, res) => {
         res.render('users/profile')
