@@ -1,22 +1,22 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
     const alias = 'Order'
     const columns = {
         id : { /* La declaración del ID no es necesaria */
-            type: dataType.INTEGER,
+            type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             unsigned: true
         },
         userID: {
-            type: dataType.INTEGER,
+            type: DataType.INTEGER,
             unsigned: true,
             allowNull: false,
         },
         date: {
-            type: dataType.DATETIME,
+            type: DataType.DATE,
         },
         total: {
-            type: dataType.DECIMAL(10, 2) 
+            type: DataType.DECIMAL(10, 2) 
         },
     }
     const config = {

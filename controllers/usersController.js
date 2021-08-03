@@ -1,9 +1,9 @@
 const fs = require('fs')
 const { validationResult } = require('express-validator')
 const bcrypt = require ('bcryptjs');
-const usersModel = require('../models/usersModel')
+/* const usersModel = require('../models/usersModel') */
 // FIXME: CRUD DB sprint 06, requerir modelos users de DB
-/* const { User } = requiere ('../database/models') */
+const { User } = require ('../database/models')
 const { maxAgeUserCookie } = require('../config/config')
 
 const path = require('path');
@@ -24,7 +24,7 @@ const usersController = {
 
         const { email, remember } = req.body
         
-/*         //FIXME: CRUD DB sprint 06, requerir modelos users de DB
+        //FIXME: CRUD DB sprint 06, requerir modelos users de DB
         User.findOne({
             where: {
                 email
@@ -42,10 +42,12 @@ const usersController = {
         }
 
         res.redirect('/user/profile')
+        })
+        .catch(err => console.log('Entre en el catch', err))
     },
-    }), */
+
         //Eliminar cuando este preparado el sequelize
-        const user = usersModel.findByField('email', email)
+        /* const user = usersModel.findByField('email', email)
 
         delete user.password
 
@@ -58,7 +60,7 @@ const usersController = {
         }
 
         res.redirect('/user/profile')
-    },
+    }, */
     registro: function(req, res) {
         return res.render('users/registro')
     },
@@ -88,18 +90,20 @@ const usersController = {
             email,
             password: haspassword,
             image: '/images/profile/' + image,
+            //FIXME: ver el tema del role
+            roleID: 1
         }
         
     //FIXME: CRUD DB sprint 06 refactor creacion de usuario
-    /*     User.create (user)
+        User.create (user)
             .then(()=> {
                 res.redirect('/user/login')
-            }) */
+            })
 
     //Eliminar cuando este preparado el sequelize
-        usersModel.create(user);
+        //usersModel.create(user);
     //Eliminar cuando este preparado el sequelize
-        res.redirect('/user/login');
+       /*  res.redirect('/user/login');*/
     },
     profile: (req, res) => {
         res.render('users/profile')
@@ -111,7 +115,7 @@ const usersController = {
         res.clearCookie('user')
         
         res.redirect('/')
-    }
+    } 
 }
 
 module.exports = usersController;

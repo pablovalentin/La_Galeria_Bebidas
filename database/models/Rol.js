@@ -1,14 +1,14 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
     const alias = 'Rol'
     const columns = {
         id : { /* La declaración del ID no es necesaria */
-            type: dataType.INTEGER,
+            type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             unsigned: true
         },
         name: {
-            type: dataType.STRING
+            type: DataType.STRING
         },
     }
     const config = {

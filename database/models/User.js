@@ -1,33 +1,33 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
     const alias = 'User'
     const columns = {
         id : { /* La declaración del ID no es necesaria */
-            type: dataType.INTEGER,
+            type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             unsigned: true
         },
         name: {
-            type: dataType.STRING
+            type: DataType.STRING
         },
         email: {
-            type: dataType.STRING,
+            type: DataType.STRING,
             allowNull: false,
         },
         password: {
-            type: dataType.STRING(64),
+            type: DataType.STRING(64),
             is: /^[0-9a-f]{64}$/i
         },
         image: {
-            type: dataType.STRING
+            type: DataType.STRING
         },
         roleID: {
-            type: dataType.INTEGER,
+            type: DataType.INTEGER,
             allowNull: false           
         }
     }
     const config = {
-        timestamps: true, /* para evitar errores de timestamp */
+        timestamps: false, /* para evitar errores de timestamp */
     }
     const UserModel = sequelize.define(alias, columns, config);
     return UserModel;

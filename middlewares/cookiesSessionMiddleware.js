@@ -1,8 +1,9 @@
 //Eliminar cuando este preparado el sequelize
-const usersModel = require('../models/usersModel')
+//const usersModel = require('../models/usersModel')
 // FIXME: CRUD DB sprint 06, requerir modelos users de DB
-/* const { User } = requiere ('../database/models') */
-/* module.exports = (req, res, next) => {
+const { User } = require ('../database/models')
+
+module.exports = (req, res, next) => {
     
     // Lo guardamos en la session
     const userCookie = req.signedCookies.user
@@ -21,9 +22,9 @@ const usersModel = require('../models/usersModel')
     } else {
         next();
     }
-} */
+}
 //Eliminar cuando este preparado el sequelize
-module.exports = (req, res, next) => {
+/* module.exports = (req, res, next) => {
     
     // Lo guardamos en la session
     const userCookie = req.signedCookies.user
@@ -39,4 +40,4 @@ module.exports = (req, res, next) => {
     }
 
     next()
-}
+} */

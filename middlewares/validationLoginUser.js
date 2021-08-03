@@ -1,8 +1,8 @@
 const { body } = require('express-validator')
 const bcrypt = require('bcryptjs')
-const userModel = require('../models/usersModel')
+//const userModel = require('../models/usersModel')
 // FIXME: CRUD DB sprint 06, requerir modelos users de DB
-/* const { User } = requiere ('../database/models') */
+const { User } = require ('../database/models')
 
 const validationLoginUser = [
     body('email')
@@ -15,7 +15,7 @@ const validationLoginUser = [
         .withMessage('Por favor ingrese su password')
         .bail()
         //Eliminar cuando este preparado el sequelize
-        .custom((value, { req }) => {
+        /* .custom((value, { req }) => {
             const { email, password } = req.body
             
             // encontrar un usuario con el email
@@ -34,9 +34,9 @@ const validationLoginUser = [
 
             return false
         })
-        .withMessage('El usuario o la contraseña son inválidas'),  
+        .withMessage('El usuario o la contraseña son inválidas'), */  
         // FIXME: CRUD DB sprint 06, requerir modelos users de DB
-        /* .custom((value, { req }) => {
+        .custom((value, { req }) => {
             const { email, password } = req.body
             
             return User.findOne({
@@ -56,8 +56,9 @@ const validationLoginUser = [
                     }else{
                         return Promise.reject ('El usuario o la contraseña son inválidas');
                     }
-                }) 
-        })
- */]
+                })
+            })
+        ]
+
 
 module.exports = validationLoginUser
