@@ -21,7 +21,7 @@ module.exports = (sequelize, DataType) => {
         price: {
             type: DataType.DECIMAL(10, 2) 
         },
-        categotyId: {
+        categoryId: {
             type: DataType.INTEGER,
             allowNull: false,
             unsigned: true
