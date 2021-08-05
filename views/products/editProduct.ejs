@@ -30,9 +30,9 @@
             <div class="control-form-product">
                 <label for="varietyId">Variedad:</label>
                 <select name="varietyId" id="varietyId" class="control" autofocus>
-                    <option value="1" <%= product.varietyId == 1 ? selected="selected" : selected="" %>>Pinot</option>
-                    <option value="2" <%= product.varietyId == 2 ? selected="selected" : selected="" %>>Malbec</option>
-                    <option value="3"<%= product.varietyId == 3 ? selected="selected" : selected="" %>>Syrah</option>
+                    <% varieties.forEach((variety) => { %>
+                        <option value="<%= variety.id %>" <%= product.varietyId == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
+                        <% }) %>
                 </select>
             </div>
             <div class="control-form-product">

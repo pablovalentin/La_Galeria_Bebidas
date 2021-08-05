@@ -29,8 +29,13 @@ const productController = {
     edit: async function(req,res){
         const { id } = req.params
         const product = await Product.findByPk(id)
+        const varieties = await Variety.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
         res.render('products/editProduct', {
-            product
+            product, varieties
         });
     },
     update: async (req, res) => {
