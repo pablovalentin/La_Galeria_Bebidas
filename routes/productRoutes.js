@@ -35,6 +35,7 @@ const upload = multer({ storage })
 //router.get('/product', productController.producto); remplazada por '/detail/:id'
 router.get('/detail/:id', productController.detail);
 router.get('/productABM', productController.ABMProducto);
+router.get('/search/:searchTerm', productController.search);
 router.get('/newProduct', productController.nuevoProducto);
 router.get('/:category', productController.filter);
 

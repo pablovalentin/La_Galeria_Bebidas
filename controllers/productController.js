@@ -1,5 +1,6 @@
 const path = require('path');
 const { Product, Variety, Category} = require ('../database/models')
+const { Op } = require('sequelize')
 
 //const productModel = require('../models/productModel')
 
@@ -118,6 +119,18 @@ const productController = {
                 res.redirect('/producto/productABM/');
             })
         
+    },
+    search: async (req,res) => {
+        const {searchTerm} = req.params
+        console.log('entré al search')
+        const results = await Product.findAll({
+            where: {
+                name: {
+                    [Op.like]: '%' + searchTerm+ '%', 
+                }
+            }
+        })
+        res.json(results)
     }
 }
 
