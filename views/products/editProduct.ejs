@@ -22,9 +22,9 @@
             <div class="control-form-product">
                 <label for="categoryId">Categoría:</label>
                 <select name="categoryId" id="categoryId" class="control" autofocus>
-                    <option value="1" <%= product.categoryId == 1 ? selected="selected" : selected="" %>>Vinos</option>
-                    <option value="2" <%= product.categoryId == 2 ? selected="selected" : selected="" %>>Whiskies</option>
-                    <option value="3"<%= product.categoryId == 3 ? selected="selected" : selected="" %>>Spirtis</option>
+                    <% categories.forEach((category) => { %>
+                        <option value="<%= category.id %>" <%= product.categoryId == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
+                    <% }) %>
                 </select>
             </div>
             <div class="control-form-product">
@@ -32,7 +32,7 @@
                 <select name="varietyId" id="varietyId" class="control" autofocus>
                     <% varieties.forEach((variety) => { %>
                         <option value="<%= variety.id %>" <%= product.varietyId == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
-                        <% }) %>
+                    <% }) %>
                 </select>
             </div>
             <div class="control-form-product">

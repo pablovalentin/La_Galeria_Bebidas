@@ -1,5 +1,5 @@
 const path = require('path');
-const { Product, Variety} = require ('../database/models')
+const { Product, Variety, Category} = require ('../database/models')
 
 //const productModel = require('../models/productModel')
 
@@ -10,7 +10,12 @@ const productController = {
                 ['id', 'ASC'],
             ],
         })
-        return res.render('products/newProduct', {varieties})
+        const categories = await Category.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
+        return res.render('products/newProduct', {varieties, categories})
     },
     ABMProducto: async function(req, res){
         const productsList = await Product.findAll({
@@ -34,8 +39,13 @@ const productController = {
                 ['id', 'ASC'],
             ],
         })
+        const categories = await Category.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
         res.render('products/editProduct', {
-            product, varieties
+            product, varieties, categories
         });
     },
     update: async (req, res) => {
@@ -72,11 +82,19 @@ const productController = {
     },
     filter: async function (req, res){
         const category = req.params.category
+        console.log(category)
+        const categoryId = await Category.findAll({
+            where: {
+                name: category
+            }
+        });
+        //res.json(identifyCategory)
         const productsFiltered = await Product.findAll({
                     where: {
-                        categoryId: category
+                        categoryId: categoryId[0].id
                     }
                 })
+        //res.json(productsFiltered)
         res.render('products/category', { productsFiltered })
     },
     create: async (req,res) => {

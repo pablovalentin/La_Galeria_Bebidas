@@ -1,18 +1,28 @@
 const path = require('path');
-const { Product} = require ('../database/models')
+const { Product, Category} = require ('../database/models')
 
 const mainController = {
     home: async function(req, res){
-        const wineCategory = '1'
-        const whiskyCategory = '2'
+        const wineCategory = 'vinos'
+        const whiskyCategory = 'whiskies'
+        const wineCategoryId = await Category.findAll({
+            where: {
+                name: wineCategory
+            }
+        })
+        const whiskiesCategoryId = await Category.findAll({
+            where: {
+                name: whiskyCategory
+            }
+        })
         const winesList = await Product.findAll({
             where: {
-                categoryId: wineCategory
+                categoryId: wineCategoryId[0].id
             }
         })
         const whiskiesList = await Product.findAll({
             where: {
-                categoryId: whiskyCategory
+                categoryId: whiskiesCategoryId[0].id
             }
         })
         return res.render('index',{winesList, whiskiesList})

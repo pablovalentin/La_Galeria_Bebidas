@@ -15,9 +15,9 @@
             <div class="control-form-product">
                 <label for="categoryId">Categoría:</label>
                 <select name="categoryId" id="categoryId" class="control" autofocus>
-                    <option value="1">Vinos</option>
-                    <option value="2">Whiskies</option>
-                    <option value="3">Spirits</option>
+                        <% categories.forEach((category) => { %>
+                        <option value="<%= category.id %>"><%= category.name %></option>
+                        <% }) %>
                 </select>
 <!--                 <input type="text" name="name" id="name" class="control" autofocus required> -->
             </div>
