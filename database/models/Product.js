@@ -10,7 +10,7 @@ module.exports = (sequelize, DataType) => {
         name: {
             type: DataType.STRING
         },
-        varietyID: {
+        varietyId: {
             type: DataType.DECIMAL,
             allowNull: false,
             unsigned: true
@@ -34,8 +34,20 @@ module.exports = (sequelize, DataType) => {
         }
     }
     const config = {
-        timestamps: true, /* para evitar errores de timestamp */
+        timestamps: false, /* para evitar errores de timestamp */
     }
     const ProductModel = sequelize.define(alias, columns, config);
+    
+    ProductModel.associate = models => {
+        ProductModel.belongsTo(models.Category, {
+            as: 'category',
+            foreignKey: 'categoryId'
+        }),
+        ProductModel.belongsTo(models.Variety, {
+            as: 'variety',
+            foreignKey: 'varietyId'
+        })
+    }
+    
     return ProductModel;
 }

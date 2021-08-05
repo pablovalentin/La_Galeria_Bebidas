@@ -13,11 +13,11 @@
             <label><h2>AGREGAR PRODUCTO</h2> </label>
             <hr class="line-break" size="1" width="90%" color="#484747">  
             <div class="control-form-product">
-                <label for="category">Categoria:</label>
-                <select name="category" id="category" class="control" autofocus>
-                    <option value="vinos">Vinos</option>
-                    <option value="whiskies">Whiskies</option>
-                    <option value="spirits">Spirits</option>
+                <label for="categoryId">Categoría:</label>
+                <select name="categoryId" id="categoryId" class="control" autofocus>
+                    <option value="1">Vinos</option>
+                    <option value="2">Whiskies</option>
+                    <option value="3">Spirits</option>
                 </select>
 <!--                 <input type="text" name="name" id="name" class="control" autofocus required> -->
             </div>
@@ -26,16 +26,16 @@
                 <input type="text" name="name" id="name" class="control" required>
             </div>
             <div class="control-form-product">
-                <label for="cepa">Cepa:</label>
-                <input type="textarea" name="cepa" id="cepa" class="control" required>
+                <label for="varietyId">Variedad:</label>
+                <select name="varietyId" id="varietyId" class="control" autofocus>
+                    <% varieties.forEach((variety) => { %>
+                    <option value="<%= variety.id %>"><%= variety.name %></option>
+                    <% }) %>
+                </select>
             </div>
             <div class="control-form-product">
-                <label for="sugerencia">Sugerencias:</label>                
-                <textarea name="sugerencia" id="sugerencia" cols="47" rows="6" class="control" required></textarea>
-            </div>
-            <div class="control-form-product">
-                <label for="cata">Nota de cata:</label>
-                <textarea name="cata" id="cata" cols="35" rows="6" class="control" required></textarea>
+                <label for="description">Descripción:</label>                
+                <textarea name="description" id="description" cols="47" rows="6" class="control" required></textarea>
             </div>
             <div class="control-form-product">
                 <label for="price">Precio:</label>

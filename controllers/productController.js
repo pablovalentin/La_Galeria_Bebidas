@@ -1,78 +1,100 @@
 const path = require('path');
-const viewsPath = path.join(__dirname, '../')
-const productModel = require('../models/productModel')
+const { Product, Variety} = require ('../database/models')
+
+//const productModel = require('../models/productModel')
 
 const productController = {
-    /* producto: function(req, res){
-        //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
-        return res.render('producto')
-    }, */
-    nuevoProducto: function(req, res){
-        //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
-        return res.render('products/newProduct')
+    nuevoProducto: async function(req, res){
+        const varieties = await Variety.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
+        return res.render('products/newProduct', {varieties})
     },
-    /* editarProducto: function(req, res){
-        //res.sendFile(path.resolve(viewsPath, './views/producto.ejs'))
-        return res.render('editProduct')
-    }, */
-    ABMProducto: function(req, res){
-        const productsList = productModel.findAll()
-        return res.render('products/productABM', {productsList})
-    },
-    edit: function(req,res){
-        const product = productModel.findByPk(req.params.id);
+    ABMProducto: async function(req, res){
+        const productsList = await Product.findAll({
+            order: [
+                ['id', 'ASC'],
+            ] ,
+            include: [
+                {
+                    association: 'category'
+                }
+            ] 
+        })
 
+        res.render('products/productABM', {productsList})    
+    },
+    edit: async function(req,res){
+        const { id } = req.params
+        const product = await Product.findByPk(id)
         res.render('products/editProduct', {
             product
         });
     },
-    update: (req, res) => {
+    update: async (req, res) => {
         const data = req.body;
         const { id } = req.params;
-    
-        const originalProduct = productModel.findByPk(id)
+        const originalProduct = await Product.findByPk(id)
         const { file } = req
         let image
         if (file) {
-            image = '/images/' + file.filename
-        } else {
-            image = originalProduct.image
-        }
+                    image = '/images/' + file.filename
+                } else {
+                image = originalProduct.image
+                }
         data.image = image
         data.category = originalProduct.category
+        const productUpdated = await Product.update(data, {
+                    where: {
+                        id
+                    }
+                })
+        res.redirect('/producto/detail/' + id)
+                    
 
-        productModel.update(data, id);
-
-        res.redirect('/producto/detail/' + id);
     },
-    detail: (req, res) => {
+    detail: async (req, res) => {
         // levantamos el id desde la url (parámetro)
-        
-        //const id = req.params.id
         const { id } = req.params
-        
-        const productDetail = productModel.findByPk(id)
-        
-        res.render('products/producto', { productDetail })
+        const productDetail = await Product.findByPk(id, {
+            include: [{
+                association: 'variety'
+            }]
+        })
+        res.render('products/producto', { productDetail })   
     },
-    filter: function (req, res){
+    filter: async function (req, res){
         const category = req.params.category
-        const productsFiltered = productModel.findFiltered(category)
+        const productsFiltered = await Product.findAll({
+                    where: {
+                        categoryId: category
+                    }
+                })
         res.render('products/category', { productsFiltered })
     },
-    create: (req,res) => {
-        const {name, cepa, price, cata, sugerencia, category, quantity} = req.body;
+    create: async (req,res) => {
+        const {name, varietyId, price, description, categoryId, quantity} = req.body;
         // Agregamos la imagen del producto utilizando Multer
         const {file} = req; // Esta es la info del archivo 
         const image = '/images/' + file.filename// Esta es la ruta al mismo.
-        const product = {image, name, cepa, price, cata, sugerencia, category, quantity}
-        const productCreated = productModel.create(product)        
+        const product = {image, name, varietyId, price, description, categoryId, quantity}
+        console.log(product)
+        const productCreated = await Product.create(product)        
         res.redirect('/producto/productABM/');
     },
     delete: (req,res) => {
         const id = req.params.id;
-        productModel.delete(id);
-        res.redirect('/producto/productABM/');
+        Product.destroy({
+            where: {
+                id
+            }
+        })
+            .then(() => {
+                res.redirect('/producto/productABM/');
+            })
+        
     }
 }
 

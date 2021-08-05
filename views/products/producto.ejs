@@ -12,11 +12,11 @@
                 <img src="<%= productDetail.image %>" alt = "<%= productDetail.name %>" class="images" width="100%">
             </div>
             <div class="product-description">
-                <h1><%= productDetail.name %> <%= productDetail.cepa %> </h1>
-                <p class="sugerencias-titulo">Sugerencias de acompañamiento: </p>
-                <p class="sugerencias-desc"><%= productDetail.sugerencia %></p>
-                <p class="sugerencias-notas">Notas de Cata</p>
-                <p class="sugerencias-desc"><%= productDetail.cata %></p>
+                <h1><%= productDetail.name %> </h1>
+                <p class="sugerencias-titulo">Variedad: </p>
+                <p class="sugerencias-desc"><%= productDetail.variety.name %></p>
+                <p class="sugerencias-notas">Descripción:</p>
+                <p class="sugerencias-desc"><%= productDetail.description %></p>
             </div>
         </div>
         <br>

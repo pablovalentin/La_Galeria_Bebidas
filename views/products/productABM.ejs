@@ -26,9 +26,9 @@
             <% productsList.forEach((product) => { %>
             <tr>
                 <td><%= product.id %></td>
-                <td><%= product.category %></td>
+                <td><%= product.category.name %></td>
                 <td><%= product.name %></td>
-                <td><%= product.price %></td>
+                <td>$ <%= product.price %></td>
                 <td><%= product.quantity %></td>
                 <td>
                     <a href="/producto/<%= product.id %>/edit"><i class="fas fa-edit"></i></a>

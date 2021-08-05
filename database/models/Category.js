@@ -12,8 +12,16 @@ module.exports = (sequelize, DataType) => {
         },
     }
     const config = {
-        timestamps: true, /* para evitar errores de timestamp */
+        timestamps: false, /* para evitar errores de timestamp */
     }
     const CategoryModel = sequelize.define(alias, columns, config);
+    
+    CategoryModel.associate = models => {
+        CategoryModel.hasMany(models.Product, {
+            as: 'products',
+            foreignKey: 'varietyId'
+        })
+    }
+    
     return CategoryModel;
 }
