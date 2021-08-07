@@ -1,7 +1,5 @@
 const { body } = require('express-validator')
-//FIXME: Modelo viejo sin sequelize
 const { User } = require ('../database/models')
-/* const userModel = require('../models/usersModel') */
 const { isFileImage } = require('../helpers/file')
 
 
@@ -19,7 +17,7 @@ const validationRegisterUser = [
         .withMessage('No es en formato e-mail.')
         .bail()
         .custom(async (value, { req }) => {
-            const { email } = req.body
+            const { email, password } = req.body
             
             // encontrar un usuario con el email
             const userFound = await User.findOne({
@@ -28,8 +26,16 @@ const validationRegisterUser = [
                 }
             })
 
+            // chequear que userFound exista
             if (userFound) {
-                console.log(userFound)
+                // comparar contraseñas
+                const passwordMatch = bcrypt.compareSync(password, userFound.password)
+                if (!passwordMatch) {
+                    return Promise.reject('El usuario o la contraseña son inválidas');
+                }
+                return true             
+            } else {
+                return Promise.reject('El usuario o la contraseña son inválidas');
             }
         }),
 
@@ -37,8 +43,6 @@ const validationRegisterUser = [
         .notEmpty()
         .withMessage('Por favor ingrese una contraseña.')
         .bail(),
-        /* .isStrongPassword()
-        .whitMessage ('Ingrese una contraseña valida.') */
         
     body('passwordConfirmation')
         .custom((value, {req}) => {
@@ -48,8 +52,6 @@ const validationRegisterUser = [
             }
             return true
         }),
-        /* .isStrongPassword()
-        .withMessage('Por favor ingrese un password etc') */
         
     body('profileImage')
         .custom((value, { req }) => {
