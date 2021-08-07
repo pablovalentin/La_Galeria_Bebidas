@@ -1,7 +1,7 @@
 const { body } = require('express-validator')
 const { User } = require ('../database/models')
 const { isFileImage } = require('../helpers/file')
-
+const bcrypt = require ('bcryptjs');
 
 const validationRegisterUser = [
     body('name')
@@ -25,17 +25,9 @@ const validationRegisterUser = [
                     email
                 }
             })
-
             // chequear que userFound exista
             if (userFound) {
-                // comparar contraseñas
-                const passwordMatch = bcrypt.compareSync(password, userFound.password)
-                if (!passwordMatch) {
-                    return Promise.reject('El usuario o la contraseña son inválidas');
-                }
-                return true             
-            } else {
-                return Promise.reject('El usuario o la contraseña son inválidas');
+                return Promise.reject('El usuario ya está registrado');
             }
         }),
 
