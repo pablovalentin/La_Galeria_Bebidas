@@ -1,6 +1,7 @@
 const { body } = require('express-validator')
 //FIXME: Modelo viejo sin sequelize
-const userModel = require('../models/usersModel')
+const { User } = require ('../database/models')
+/* const userModel = require('../models/usersModel') */
 const { isFileImage } = require('../helpers/file')
 
 
@@ -17,22 +18,28 @@ const validationRegisterUser = [
         .isEmail()
         .withMessage('No es en formato e-mail.')
         .bail()
-//FIXME: Modelo viejo sin sequelize
-        .custom((email) => {
-            const userFound = userModel.findByField('email', email)
+        .custom(async (value, { req }) => {
+            const { email } = req.body
+            
+            // encontrar un usuario con el email
+            const userFound = await User.findOne({
+                where: {
+                    email
+                }
+            })
+
             if (userFound) {
-                return false
+                console.log(userFound)
             }
-            return true
-        })
-        .withMessage('El usuario ya existe.'),
+        }),
+
     body('password')
         .notEmpty()
         .withMessage('Por favor ingrese una contraseña.')
-        .bail()
+        .bail(),
         /* .isStrongPassword()
         .whitMessage ('Ingrese una contraseña valida.') */
-        ,
+        
     body('passwordConfirmation')
         .custom((value, {req}) => {
             const {password} = req.body
@@ -40,10 +47,10 @@ const validationRegisterUser = [
                 throw new Error('Las contraseñas no coinciden.')
             }
             return true
-        })
+        }),
         /* .isStrongPassword()
         .withMessage('Por favor ingrese un password etc') */
-        ,
+        
     body('profileImage')
         .custom((value, { req }) => {
             const { file } = req
@@ -59,7 +66,7 @@ const validationRegisterUser = [
             // chequea que la extensión sea la correcta
             
             return true
-        }) 
+        })
 ]
 
 module.exports = validationRegisterUser

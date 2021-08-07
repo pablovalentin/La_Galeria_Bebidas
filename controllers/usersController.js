@@ -43,21 +43,6 @@ const usersController = {
         .catch(err => console.log('Entre en el catch', err))
     },
 
-        //Eliminar cuando este preparado el sequelize
-        /* const user = usersModel.findByField('email', email)
-
-        delete user.password
-
-        req.session.logged = user
-
-        if (remember) {
-            res.cookie('user', user.id, {
-                maxAge: maxAgeUserCookie
-            })
-        }
-
-        res.redirect('/user/profile')
-    }, */
     registro: function(req, res) {
         return res.render('users/registro')
     },
