@@ -121,8 +121,9 @@ const productController = {
         
     },
     search: async (req,res) => {
-        const {searchTerm} = req.params
+        const {searchTerm} = req.query
         console.log('entré al search')
+        console.log(req.query)
         const results = await Product.findAll({
             where: {
                 name: {
@@ -130,6 +131,7 @@ const productController = {
                 }
             }
         })
+        res.render('products/searchResults', { results })
         res.json(results)
     }
 }
