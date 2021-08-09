@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 
     // Si existe buscamos en el modelo el usuario
     if (userCookie) {
-        Users.findByPk(userCookie)
+        User.findByPk(userCookie)
             .then(user => {
                 delete user.password 
                 // pasar a la sesión

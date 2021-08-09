@@ -25,7 +25,7 @@ module.exports = (sequelize, DataType) => {
     const OrderModel = sequelize.define(alias, columns, config);
 
     OrderModel.associate = models => {
-        OrderModel.belongsTo(models.user, {
+        OrderModel.belongsTo(models.User, {
             as: 'user',
             foreignKey: 'userID'
         })
