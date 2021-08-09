@@ -33,5 +33,17 @@ module.exports = (sequelize, DataType) => {
         timestamps: false, /* para evitar errores de timestamp */
     }
     const UserModel = sequelize.define(alias, columns, config);
+
+    UserModel.associate = models => {
+        UserModel.hasMany(models.order, {
+            as: 'order',
+            foreignKey: 'userID'
+        }),
+        UserModel.belongsTo(models.role, {
+            as: 'role',
+            foreignKey: 'roleID'
+        })
+    }
+
     return UserModel;
 }

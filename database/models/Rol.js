@@ -15,5 +15,13 @@ module.exports = (sequelize, DataType) => {
         timestamps: true, /* para evitar errores de timestamp */
     }
     const RolModel = sequelize.define(alias, columns, config);
+
+    RolModel.associate = models => {
+        RolModel.hasMany(models.user, {
+            as: 'users',
+            foreignKey: 'roleId'
+        })
+    }
+
     return RolModel;
 }

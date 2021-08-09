@@ -23,5 +23,13 @@ module.exports = (sequelize, DataType) => {
         timestamps: true, /* para evitar errores de timestamp */
     }
     const OrderModel = sequelize.define(alias, columns, config);
+
+    OrderModel.associate = models => {
+        OrderModel.belongsTo(models.user, {
+            as: 'user',
+            foreignKey: 'userID'
+        })
+    }
+
     return OrderModel;
 }
