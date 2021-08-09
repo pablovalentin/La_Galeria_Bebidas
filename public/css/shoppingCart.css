@@ -206,12 +206,12 @@
         justify-content: space-around;
         flex-wrap: wrap;
         }
-        .nav-bar {
+        /* .nav-bar {
         font-size: 26px;
         }
         .user-links li {
         font-size: 28px;
-    }
+        } */
 
     .line{
         display:none;
