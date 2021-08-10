@@ -49,12 +49,11 @@ module.exports = {
         // Escribir el archivo
         fs.writeFileSync(this.filename, dataJson);
     },
-    create(product) {  /* Esto solo lo entendemos nosotros y dios */
+    create(product) {  
         product.id =  this.generateId();
         products = this.readFile();
         productsUpdated = [...products, product]
         this.writeFile(productsUpdated)
-        //console.log(product)
         return product;
     },
     generateId() {

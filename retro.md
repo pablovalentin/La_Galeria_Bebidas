@@ -49,7 +49,7 @@ En general queriamos comentar que nos resulto ameno trabajar juntos.<br>
 * <h3> Dejar de hacer </h3>
   Consideramos que este sprint estuvo bien resuelto en líneas generales y la idea es continuar por este camino. 
   
-  <h1> Retro Sprint 4</h1>
+<h1> Retro Sprint 4</h1>
 
 * <h3> Comenzar a hacer </h3>
   Comenzar a trabajar sobre la misma rama, al mismo tiempo.
@@ -62,17 +62,18 @@ En general queriamos comentar que nos resulto ameno trabajar juntos.<br>
 * <h3> Dejar de hacer </h3>
   Consideramos que este sprint estuvo bien resuelto en líneas generales y la idea es continuar por este camino. 
       
-    <h1> Retro Sprint 5</h1>
+ <h1> Retro Sprint 5</h1>
+ 
 * <h3> Comenzar a hacer </h3>
   Brainstorming para ajustar el front-end del sitio. 
 * <h3> Hacer más </h3>
-  .
+  Pruebas en conjunto, sobre los desarrollos modificados.
 * <h3> Continuar haciendo </h3>
-  
+  Reuniones periódicas para discutir el avance del sprint.
 * <h3> Hacer menos </h3>
-  
+  Cambiar código dejando el antiguo comentado (eliminar código obsoleto)
 * <h3> Dejar de hacer </h3>
-       
+  Seguimos contentos con el avanze del proyecto y con como se manejan los cambios en general, no encontramos mucho para comentar en este punto.
 
  
 

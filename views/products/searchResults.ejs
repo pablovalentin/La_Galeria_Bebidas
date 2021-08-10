@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../partials/head.ejs') %> 
+        <link rel="stylesheet" href="/css/producto.css">  
+    </head>
+<body>
+    <%- include ('../partials/header.ejs') %>
+    <main>
+        <div class='admin-prod'>
+            <H2>Resultados</H2>
+        </div>
+        <section class="product-list">
+            <% if (results == '') {%>
+                <div class="no-products">
+                    <p class="message">No se encontraron productos.</p> 
+                </div>
+            <% } else { %>
+            <% results.forEach((product) => { %>
+            <article class="vinos-borde">
+                    <!-- <div class="vinos-borde"> -->
+                    <a href="/producto/detail/<%= product.id %>"><img src="<%= product.image %>" alt = "<%= product.name %>" class="images" width="100%"></a>
+                    <div class="product-description">
+                        <p class = "coleccion"><%= product.name %> </p>    
+                        <p class = "cepa"><%= product.cepa %></p>
+                        <p class = "precio">$ <%= product.price %></p>     
+                        <i class="fas fa-cart-plus"></i>            
+                    </div>
+                    <!-- </div> -->
+            </article>
+                <% }) %>
+                <% } %>
+        </section>
+    </main>
+    <%- include ('../partials/footer.ejs') %>
+</body>
+</html>

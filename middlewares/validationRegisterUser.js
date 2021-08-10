@@ -1,7 +1,7 @@
 const { body } = require('express-validator')
-const userModel = require('../models/usersModel')
+const { User } = require ('../database/models')
 const { isFileImage } = require('../helpers/file')
-
+const bcrypt = require ('bcryptjs');
 
 const validationRegisterUser = [
     body('name')
@@ -16,21 +16,26 @@ const validationRegisterUser = [
         .isEmail()
         .withMessage('No es en formato e-mail.')
         .bail()
-        .custom((email) => {
-            const userFound = userModel.findByField('email', email)
+        .custom(async (value, { req }) => {
+            const { email, password } = req.body
+            
+            // encontrar un usuario con el email
+            const userFound = await User.findOne({
+                where: {
+                    email
+                }
+            })
+            // chequear que userFound exista
             if (userFound) {
-                return false
+                return Promise.reject('El usuario ya está registrado');
             }
-            return true
-        })
-        .withMessage('El usuario ya existe.'),
+        }),
+
     body('password')
         .notEmpty()
         .withMessage('Por favor ingrese una contraseña.')
-        .bail()
-        /* .isStrongPassword()
-        .whitMessage ('Ingrese una contraseña valida.') */
-        ,
+        .bail(),
+        
     body('passwordConfirmation')
         .custom((value, {req}) => {
             const {password} = req.body
@@ -38,10 +43,8 @@ const validationRegisterUser = [
                 throw new Error('Las contraseñas no coinciden.')
             }
             return true
-        })
-        /* .isStrongPassword()
-        .withMessage('Por favor ingrese un password etc') */
-        ,
+        }),
+        
     body('profileImage')
         .custom((value, { req }) => {
             const { file } = req
@@ -53,11 +56,9 @@ const validationRegisterUser = [
                 // disparar error
                 throw new Error('Por favor ingrese un archivo válido.')
             }
-
-            // chequea que la extensión sea la correcta
             
             return true
-        }) 
+        })
 ]
 
 module.exports = validationRegisterUser

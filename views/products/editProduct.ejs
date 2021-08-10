@@ -20,16 +20,24 @@
                 <input type="text" name="name" id="name" class="control" autofocus required value="<%= product.name %>">
             </div>
             <div class="control-form-product">
-                <label for="cepa">Cepa:</label>
-                <input type="textarea" name="cepa" id="cepa" class="control" required value="<%= product.cepa %>">
+                <label for="categoryId">Categoría:</label>
+                <select name="categoryId" id="categoryId" class="control" autofocus>
+                    <% categories.forEach((category) => { %>
+                        <option value="<%= category.id %>" <%= product.categoryId == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
+                    <% }) %>
+                </select>
             </div>
             <div class="control-form-product">
-                <label for="sugerencia">Sugerencias:</label>                
-                <textarea name="sugerencia" id="sugerencia" cols="47" rows="6" class="control" required ><%= product.sugerencia %></textarea>
+                <label for="varietyId">Variedad:</label>
+                <select name="varietyId" id="varietyId" class="control" autofocus>
+                    <% varieties.forEach((variety) => { %>
+                        <option value="<%= variety.id %>" <%= product.varietyId == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
+                    <% }) %>
+                </select>
             </div>
             <div class="control-form-product">
-                <label for="cata">Nota de cata:</label>
-                <textarea name="cata" id="cata" cols="35" rows="6" class="control" required><%= product.cata %></textarea>
+                <label for="description">Descripción:</label>                
+                <textarea name="description" id="description" cols="47" rows="6" class="control" required ><%= product.description %></textarea>
             </div>
             <div class="control-form-product">
                 <label for="price">Precio:</label>
