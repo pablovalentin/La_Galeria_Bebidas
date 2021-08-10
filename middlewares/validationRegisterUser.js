@@ -56,8 +56,6 @@ const validationRegisterUser = [
                 // disparar error
                 throw new Error('Por favor ingrese un archivo válido.')
             }
-
-            // chequea que la extensión sea la correcta
             
             return true
         })

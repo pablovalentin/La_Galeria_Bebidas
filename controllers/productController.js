@@ -2,8 +2,6 @@ const path = require('path');
 const { Product, Variety, Category} = require ('../database/models')
 const { Op } = require('sequelize')
 
-//const productModel = require('../models/productModel')
-
 const productController = {
     nuevoProducto: async function(req, res){
         const varieties = await Variety.findAll({
