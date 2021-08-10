@@ -20,3 +20,23 @@
 <h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
 <h3>* Pruebas en conjunto del proceso.</h3>
 
+<h1>Weekly 04-07</h1>
+<h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
+<h3>* Pruebas en conjunto del proceso.</h3>
+
+<h1>Weekly 18-07</h1>
+<h3>* División de tareas para el nuevo sprint.</h3>
+
+<h1>Weekly 18-07</h1>
+<h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
+<h3>* Consultas de dudas.</h3>
+
+<h1>Weekly 25-07</h1>
+<h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
+<h3>* Pruebas en conjunto del proceso.</h3>
+
+<h1>Weekly 01-08</h1>
+<h3>* Validación y chequeo de modificaciones sugeridas en la weekly previa.</h3>
+<h3>* Pruebas en conjunto del proceso.</h3>
+
+
