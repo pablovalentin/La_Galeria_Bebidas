@@ -1,4 +1,7 @@
 /* Estilo header */
+.msg-error{
+  color: red;
+}
 
 * {
   margin: 0px;
