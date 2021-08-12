@@ -29,14 +29,20 @@
                         <option value="<%= category.id %>" <%= (locals.oldValues && oldValues.categoryId == category.id )|| product.categoryId == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.categoryId) { %>
+                    <span class="error-message"><%= errors.categoryId.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-product">
                 <label for="varietyId">Variedad:</label>
                 <select name="varietyId" id="varietyId" class="control" autofocus>
                     <% varieties.forEach((variety) => { %>
-                        <option value="<%= variety.id %>" <%= product.varietyId == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
+                        <option value="<%= variety.id %>" <%= (locals.oldValues && oldValues.varietyId == variety.id )||product.varietyId == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.varietyId) { %>
+                    <span class="error-message"><%= errors.varietyId.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-product">
                 <label for="description">Descripción:</label>                

@@ -13,14 +13,6 @@
             <label><h2>AGREGAR PRODUCTO</h2> </label>
             <hr class="line-break" size="1" width="90%" color="#484747">  
             <div class="control-form-product">
-                <label for="categoryId">Categoría:</label>
-                <select name="categoryId" id="categoryId" class="control" autofocus>
-                        <% categories.forEach((category) => { %>
-                            <option value="<%= category.id %>" <%= (locals.oldValues && oldValues.categoryId) == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
-                        <% }) %>
-                </select>
-            </div>
-            <div class="control-form-product">
                 <label for="name">Nombre:</label>
                 <input type="text" name="name" id="name" class="control" value="<%= locals.oldValues && oldValues.name%>">
                 <% if (locals.errors && errors.name) { %>
@@ -29,12 +21,26 @@
                 <span class='msg-error msg-error-name'></span>
             </div>
             <div class="control-form-product">
+                <label for="categoryId">Categoría:</label>
+                <select name="categoryId" id="categoryId" class="control" autofocus>
+                        <% categories.forEach((category) => { %>
+                            <option value="<%= category.id %>" <%= (locals.oldValues && oldValues.categoryId) == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
+                        <% }) %>
+                </select>
+                <% if (locals.errors && errors.categoryId) { %>
+                    <span class="error-message"><%= errors.categoryId.msg %></span>
+                <% } %>
+            </div>
+            <div class="control-form-product">
                 <label for="varietyId">Variedad:</label>
                 <select name="varietyId" id="varietyId" class="control" autofocus>
                     <% varieties.forEach((variety) => { %>
                         <option value="<%= variety.id %>" <%= (locals.oldValues && oldValues.varietyId) == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.varietyId) { %>
+                    <span class="error-message"><%= errors.varietyId.msg %></span>
+                <% } %>
             </div>
             <div class="control-form-product">
                 <label for="description">Descripción:</label>                
