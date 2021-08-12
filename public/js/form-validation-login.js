@@ -9,30 +9,32 @@ const inputPassword = form.querySelector('#password')
 const errorEmail = form.querySelector('.msg-error-email')
 const errorPassword = form.querySelector('.msg-error-password')
 
-console.log(errorEmail)
+function validateEmail(inputEmail) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(inputEmail).toLowerCase());    
+}    
 
-form.addEventListener('submit', (e) =>{
+form.addEventListener('submit', (e) => {
+    errorEmail.innerHTML = ""
+    errorPassword.innerHTML =""
 
-    let hasErrors = false
+    const email = inputEmail.value
 
     //mail
-    if (inputEmail.value.length < 3) {
-        hasErrors = true
-        errorEmail.innerHTML = "Escriba su mail"
+    if (!validateEmail(email)) {
+        errorEmail.innerHTML = "Por favor ingresá un e-mail correcto"
         inputEmail.focus()
     }
 
     //password
     if (inputPassword.value.length < 3) {
-        hasErrors = true
-        errorEmail.innerHTML = "Escriba su password"
-        inputEmail.focus()
+        errorPassword.innerHTML = "Escriba un password correcto"
+        inputPassword.focus()
     }
 
+
     //bloqueamos la ejecucion por Default
-    if (hasErrors) {
     e.preventDefault()
-    }
 
 })
 
