@@ -10,20 +10,23 @@
     <main>
         <!-- Formulario registro
         -->
-        <form action="/producto/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="product-form">
-            
+        <form action="/producto/<%= locals.oldValues ? oldValues.id : product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="product-form" class="product-form">
         
             <label><h2>MODIFICAR PRODUCTO</h2> </label>
             <hr class="line-break" size="1" width="90%" color="#484747">  
             <div class="control-form-product">
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" class="control" autofocus required value="<%= product.name %>">
+                <label for="name">Nombre:</label>   
+                <input type="text" name="name" id="name" class="control" autofocus required value="<%= (locals.oldValues) ? oldValues.name : product.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-message"><%= errors.name.msg %></span>
+                <% } %>
+                <span class='msg-error msg-error-name'></span>
             </div>
             <div class="control-form-product">
                 <label for="categoryId">Categoría:</label>
                 <select name="categoryId" id="categoryId" class="control" autofocus>
                     <% categories.forEach((category) => { %>
-                        <option value="<%= category.id %>" <%= product.categoryId == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
+                        <option value="<%= category.id %>" <%= (locals.oldValues && oldValues.categoryId == category.id )|| product.categoryId == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
                     <% }) %>
                 </select>
             </div>
@@ -37,26 +40,29 @@
             </div>
             <div class="control-form-product">
                 <label for="description">Descripción:</label>                
-                <textarea name="description" id="description" cols="47" rows="6" class="control" required ><%= product.description %></textarea>
+                <textarea name="description" id="description" cols="47" rows="6" class="control" required ><%= (locals.oldValues) ? oldValues.description : product.description %></textarea>
+                <span class='msg-error msg-error-description'></span>
             </div>
             <div class="control-form-product">
                 <label for="price">Precio:</label>
-                <input type="text" name="price" id="price" value="<%= product.price %>" class="control" required>
+                <input type="text" name="price" id="price" value="<%= (locals.oldValues) ? oldValues.price : product.price %>" class="control" required>
             </div>
             <div class="control-form-product">
                 <label for="quantity">Cantidad:</label>
-                <input type="text" name="quantity" id="quantity" value="<%= product.quantity %>" class="control" required>
+                <input type="text" name="quantity" id="quantity" value="<%= (locals.oldValues) ? oldValues.quantity : product.quantity %>" class="control" required>
             </div>
             <div class="control-form-product">
                 <label for="image">Foto del producto:</label>
-                    <img src="<%= product.image %>" width="300" />
+                    <img id='existing-image' src="<%= product.image %>" width="300" />
                 <div class="seleccionar">
                     <input type="file" id="image" name="image" class="product-pic">
                 </div>
+                <span class='msg-error msg-error-image'></span>
             </div>
             <button type="submit" class="button-create">MODIFICAR PRODUCTO</button>
         </form>
     </main>
+    <script src="/js/form-validation-update-Product.js"></script>
     <%- include ('../partials/footer.ejs') %>
 </body>
 </html>

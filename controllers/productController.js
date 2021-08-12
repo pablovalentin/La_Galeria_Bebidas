@@ -1,4 +1,6 @@
 const path = require('path');
+const fs = require('fs')
+const { validationResult } = require('express-validator')
 const { Product, Variety, Category} = require ('../database/models')
 const { Op } = require('sequelize')
 
@@ -31,6 +33,7 @@ const productController = {
         res.render('products/productABM', {productsList})    
     },
     edit: async function(req,res){
+        const formValidation = validationResult(req)
         const { id } = req.params
         const product = await Product.findByPk(id)
         const varieties = await Variety.findAll({
@@ -48,9 +51,32 @@ const productController = {
         });
     },
     update: async (req, res) => {
-        const data = req.body;
         const { id } = req.params;
         const originalProduct = await Product.findByPk(id)
+        const formValidation = validationResult(req)
+        const oldValues = req.body
+        const varieties = await Variety.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
+        const categories = await Category.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
+        //res.send(formValidation)
+        if (!formValidation.isEmpty()) {
+            if (req.file) {
+                fs.unlinkSync(req.file.path)
+            }
+            //res.send(oldValues)
+            res.render('products/editProduct', { oldValues, product: originalProduct, varieties,categories, errors: formValidation.mapped() })
+        return  
+        } 
+
+        const data = req.body;
+        
         const { file } = req
         let image
         if (file) {
@@ -97,6 +123,28 @@ const productController = {
         res.render('products/category', { productsFiltered })
     },
     create: async (req,res) => {
+        const formValidation = validationResult(req)
+        const varieties = await Variety.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
+        const categories = await Category.findAll({
+            order: [
+                ['id', 'ASC'],
+            ],
+        })
+        const oldValues = req.body
+        //res.send(formValidation)
+        if (!formValidation.isEmpty()) {
+            if (req.file) {
+                fs.unlinkSync(req.file.path)
+            }
+            //res.send(oldValues)
+            res.render('products/newProduct', { oldValues, varieties,categories, errors: formValidation.mapped() })
+        return  
+        } 
+
         const {name, varietyId, price, description, categoryId, quantity} = req.body;
         // Agregamos la imagen del producto utilizando Multer
         const {file} = req; // Esta es la info del archivo 

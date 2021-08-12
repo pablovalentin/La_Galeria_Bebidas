@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const productController = require ('../controllers/productController.js');
+const validationCreateProduct = require('../middlewares/validationCreateProduct')
+const validationUpdateProduct = require('../middlewares/validationUpdateProduct')
+
 const path = require('path');
 const multer = require('multer')
 
@@ -38,11 +41,11 @@ router.get('/newProduct', productController.nuevoProducto);
 router.get('/:category', productController.filter);
 
 //New
-router.post('/create', upload.single('image'), productController.create);
+router.post('/create', upload.single('image'), validationCreateProduct, productController.create);
 
 // Update
 router.get('/:id/edit', productController.edit);
-router.put('/:id', upload.single('image'), productController.update);
+router.put('/:id', upload.single('image'),validationUpdateProduct, productController.update);
 
 //Delete
 router.delete('/:id', productController.delete);
