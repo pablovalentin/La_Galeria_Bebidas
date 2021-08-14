@@ -14,7 +14,7 @@
             <hr class="line-break" size="1" width="90%" color="#484747">  
             <div class="control-form-product">
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" class="control" value="<%= locals.oldValues && oldValues.name%>">
+                <input type="text" name="name" id="name" class="control"  value="<%= locals.oldValues && oldValues.name%>">
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-message"><%= errors.name.msg %></span>
                 <% } %>
@@ -22,7 +22,7 @@
             </div>
             <div class="control-form-product">
                 <label for="categoryId">Categoría:</label>
-                <select name="categoryId" id="categoryId" class="control" autofocus>
+                <select name="categoryId" id="categoryId" class="control" >
                         <% categories.forEach((category) => { %>
                             <option value="<%= category.id %>" <%= (locals.oldValues && oldValues.categoryId) == category.id ? selected="selected" : selected="" %>><%= category.name %></option>
                         <% }) %>
@@ -33,7 +33,7 @@
             </div>
             <div class="control-form-product">
                 <label for="varietyId">Variedad:</label>
-                <select name="varietyId" id="varietyId" class="control" autofocus>
+                <select name="varietyId" id="varietyId" class="control" >
                     <% varieties.forEach((variety) => { %>
                         <option value="<%= variety.id %>" <%= (locals.oldValues && oldValues.varietyId) == variety.id ? selected="selected" : selected="" %>><%= variety.name %></option>
                     <% }) %>
@@ -56,6 +56,7 @@
                 <% if (locals.errors && errors.price) { %>
                     <span class="error-message"><%= errors.price.msg %></span>
                 <% } %>
+                <span class='msg-error msg-error-price'></span>
             </div>
             <div class="control-form-product">
                 <label for="quantity">Cantidad:</label>
@@ -63,6 +64,7 @@
                 <% if (locals.errors && errors.quantity) { %>
                     <span class="error-message"><%= errors.quantity.msg %></span>
                 <% } %>
+                <span class='msg-error msg-error-quantity'></span>
             </div>
             <div class="control-form-product">
                 <label for="image">Foto del producto:</label>

@@ -63,6 +63,9 @@
                 <div class="seleccionar">
                     <input type="file" id="image" name="image" class="product-pic">
                 </div>
+                <% if (locals.errors && errors.image) { %>
+                    <span class="error-message"><%= errors.image.msg %></span>
+                <% } %>
                 <span class='msg-error msg-error-image'></span>
             </div>
             <button type="submit" class="button-create">MODIFICAR PRODUCTO</button>

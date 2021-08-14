@@ -54,6 +54,7 @@ const productController = {
         const { id } = req.params;
         const originalProduct = await Product.findByPk(id)
         const formValidation = validationResult(req)
+        
         const oldValues = req.body
         const varieties = await Variety.findAll({
             order: [
@@ -86,11 +87,13 @@ const productController = {
                 }
         data.image = image
         data.category = originalProduct.category
+        
         const productUpdated = await Product.update(data, {
                     where: {
                         id
                     }
                 })
+        
         res.redirect('/producto/detail/' + id)
                     
 

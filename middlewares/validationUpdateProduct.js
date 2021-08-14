@@ -1,6 +1,6 @@
 const { body } = require('express-validator')
 const { isFileImage } = require('../helpers/file')
-const { Variety, Category} = require ('../database/models')
+const { Product, Variety, Category} = require ('../database/models')
 
 
 const validationUpdateProduct = [
@@ -39,18 +39,20 @@ const validationUpdateProduct = [
                 
         }),
     body('image')
-        .custom((value, { req }) => {
+        .custom(async (value, { req }) => {
             const { file } = req
-            
-            // chequea que haya cargado imagen
-            if (!file) {
+            const product = await Product.findByPk(req.params.id)
+            // si el producto ya tenía imagen, no se valida
+            if (!product.image){
+                if (!file) {
+                // chequea que haya cargado imagen
                 throw new Error('Por favor ingrese una imagen para el producto.')
-            }
+                }
             if (!isFileImage(file.originalname)) {
-                // disparar error
+                // chequea el formato 
                 throw new Error('Por favor ingrese un archivo válido.')
-            }
-            
+            }           
+            }   
             return true
         })
         
