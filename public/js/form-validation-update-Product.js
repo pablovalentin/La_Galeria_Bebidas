@@ -39,7 +39,7 @@ function validateForm(e) {
     } else {
         console.log(inputImage.value)
         const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
-            if (!allowedExtensions.exec(inputImage.value)) {
+            if (!allowedExtensions.exec(inputImage.value) && !existingImage.src) {
                 hasErrors = true
                 errorImage.innerHTML = "Ingrese un archivo válido"
             } 
