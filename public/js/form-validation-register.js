@@ -1,4 +1,3 @@
-console.log ("Puta madre")
 
 window.onload = function() {
 
@@ -19,7 +18,7 @@ window.onload = function() {
     const errorPassword = form.querySelector('.msg-error-password')
     const errorConfirmPassword = form.querySelector('.msg-error-passwordConfirmation')
     const errorProfileImage = form.querySelector('.msg-error-profileImage')
-    const msgErrorsArray = [errorName, errorLastName, errorEmail, errorPassword]
+    const msgErrorsArray = [errorName, errorLastName, errorEmail, errorPassword, errorConfirmPassword, errorProfileImage]
 
     //Constantes para datos minimos
     const minChar = 2
@@ -79,11 +78,11 @@ window.onload = function() {
             hasErrors = true
             errorPassword.innerHTML = "La contraseña debe contener al menos 8 digitos"
             inputPassword.focus()
-        }else if (!regularExpression.test(inputPassword)) {
+        }/* else if (!regularExpression.test(inputPassword)) {
             hasErrors = true
             errorPassword.innerHTML = "La contraseña deberá tener letras mayúsculas, minúsculas, un número y un carácter especial"            
             inputPassword.focus()
-        }
+        } */
         if (inputPassword.value != inputConfirmPassword.value){
             hasErrors = true
             errorConfirmPassword.innerHTML = "Las contraseñas no coinciden"            
