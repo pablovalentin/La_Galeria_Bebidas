@@ -3,6 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.msg-error {
+    display: block
+}
 .register-form, .login-form {
     padding: 20px 15px;
     display: flex;
