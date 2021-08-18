@@ -1,5 +1,5 @@
 /* Estilo header */
-.msg-error{
+.msg-error {
   color: red;
 }
 
@@ -27,16 +27,19 @@ a:hover {
 
 .leyenda {
   text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
+
 .search-form {
   margin-top: -20px;
 }
 .seach-input {
-    padding: 5px;
-    border-radius: 5px;
-    border: solid 1px black;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px black;
 }
-.button-search{
+.button-search {
   background-color: #484747;
   border: none;
   font-size: 12px;
@@ -74,24 +77,25 @@ a:hover {
 
 /* Estilo main */
 .promos {
-  width: 400px;
+  width: 250px;
   margin: auto;
   max-width: 100%;
   background-color: #2c2b2b;
 }
+
 .images {
   max-height: 600px;
 }
 .vinos-borde {
   margin: 25px;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  background-color: rgb(204, 198, 198);
+  box-shadow: 0px 0px 10px rgb(219, 219, 219);
+  background-color: rgb(255, 255, 255);
   position: relative;
   border-radius: 40px;
 }
 
 .coleccion {
-  font-size: 18px;
+  font-size: 16px;
   color: 484747;
   text-align: center;
   font-weight: bold;
@@ -99,7 +103,7 @@ a:hover {
 }
 
 .cepa {
-  font-size: 16px;
+  font-size: 14px;
   color: #484747;
   margin: 1px;
   text-align: center;
@@ -107,7 +111,7 @@ a:hover {
 }
 
 .precio {
-  font-size: 16px;
+  font-size: 14px;
   color: #484747;
   text-align: center;
   padding: 5px;
@@ -115,14 +119,14 @@ a:hover {
 }
 
 .fa-cart-plus {
-  font-size: 30px;
-  color: white;
+  font-size: 20px;
+  color: black;
   margin: auto;
   width: 40px;
   height: 40px;
-  text-align: center; /* Como corno lo meto en el medioooo!!!! */
-  padding: 5px;
-  margin-bottom: 4px;
+  text-align: center;
+  /*   padding: 5px; */
+  margin-bottom: -3px;
 }
 .product-description {
   display: flex;
@@ -208,6 +212,9 @@ footer {
 .error404 {
   text-align: center;
 }
+.logo {
+  width: 100%;
+}
 .logo-footer {
   max-width: 200px;
 }
@@ -261,8 +268,9 @@ main {
   }
   .product-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 0em 5em 5em 5em;
   }
   .vinos-borde {
     width: 43%;
@@ -274,8 +282,9 @@ main {
   }
   .more-products {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 0em 5em 5em 5em;
   }
   .nav-bar {
     font-size: 20px;
