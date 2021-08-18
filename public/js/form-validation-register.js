@@ -1,5 +1,3 @@
-console.log ("Puta madre")
-
 window.onload = function() {
 
     const form = document.querySelector("#register-form")
@@ -19,7 +17,7 @@ window.onload = function() {
     const errorPassword = form.querySelector('.msg-error-password')
     const errorConfirmPassword = form.querySelector('.msg-error-passwordConfirmation')
     const errorProfileImage = form.querySelector('.msg-error-profileImage')
-    const msgErrorsArray = [errorName, errorLastName, errorEmail, errorPassword]
+    const msgErrorsArray = [errorName, errorLastName, errorEmail, errorPassword, errorConfirmPassword, errorProfileImage]
 
     //Constantes para datos minimos
     const minChar = 2
