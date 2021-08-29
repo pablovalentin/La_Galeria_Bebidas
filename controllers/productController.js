@@ -106,7 +106,7 @@ const productController = {
                 association: 'variety'
             }]
         })
-        res.render('products/producto', { productDetail })   
+        res.render('products/producto', { productDetail })  
     },
     filter: async function (req, res){
         const category = req.params.category

@@ -6,10 +6,16 @@ const bcrypt = require ('bcryptjs');
 const validationRegisterUser = [
     body('name')
         .notEmpty()
-        .withMessage('Por favor ingrese su nombre.'),
+        .withMessage('Por favor ingrese su nombre.')
+        .bail()
+        .isLength({ min: 2 })
+        .withMessage('Por favor ingrese un nombre más largo.'),
     body('lastName')
         .notEmpty()
-        .withMessage('Por favor ingrese su apellido.'),    
+        .withMessage('Por favor ingrese su apellido.')
+        .bail()
+        .isLength({ min: 2 })
+        .withMessage('Por favor ingrese un apellido más largo.'), 
     body('email')
         .notEmpty()
         .withMessage('Por favor ingrese su e-mail.')
@@ -34,7 +40,9 @@ const validationRegisterUser = [
     body('password')
         .notEmpty()
         .withMessage('Por favor ingrese una contraseña.')
-        .bail(),
+        .bail()
+        .isLength({ min: 8 })
+        .withMessage('La contraseña debe ser de al menos 8 caracteres.'), 
         
     body('passwordConfirmation')
         .custom((value, {req}) => {
