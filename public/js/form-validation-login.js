@@ -1,4 +1,3 @@
-/* console.log("Hola mundo")
 window.onload = function(){
 const form = document.querySelector("#form-login")
 
@@ -53,4 +52,3 @@ function resetErrors() {
 
 form.addEventListener('submit', validateForm)
 }
- */
