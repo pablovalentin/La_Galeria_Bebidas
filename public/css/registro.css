@@ -3,6 +3,11 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+.msg-error {
+    display: block
+}
+
 .register-form, .login-form {
     padding: 20px 15px;
     display: flex;
@@ -52,6 +57,7 @@ a:active, a:hover {
 }
 .forgot-pass {
     margin-top: 5px;
+    display: block;
     float: right;
 }
 .error-message {

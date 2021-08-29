@@ -10,7 +10,7 @@ const validationLoginUser = [
         .withMessage('No es en formato e-mail'),
     body('password')
         .notEmpty()
-        .withMessage('Por favor ingrese su password')
+        .withMessage('Por favor ingrese una contraseña valida')
         .bail()
         .custom((value, { req }) => {
             const { email, password } = req.body
