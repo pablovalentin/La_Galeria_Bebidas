@@ -29,7 +29,7 @@
             </div>
             <div class="control-form-register">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" class="control" value="<%= locals.oldValues && oldValues.email%>">
+                <input type="text" name="email" id="email" placeholder="Correo electrónico" class="control" value="<%= locals.oldValues && oldValues.email%>">
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-message"><%= errors.email.msg %></span>
                 <% } %>

@@ -43,20 +43,26 @@ window.onload = function() {
             inputName.focus()
         }
         if (inputLastName.value.length < minChar){ 
-            hasErrors = true
             errorLastName.innerHTML = "Por favor ingrese su apellido"
-            inputLastName.focus()
+            if (!hasErrors){
+                inputLastName.focus()
+            }
+            hasErrors = true
         }
 
         //Validaciones Email
         if (!inputEmail.value) {
-            hasErrors = true
             errorEmail.innerHTML = "Por favor ingrese su e-mail"
-            inputEmail.focus()
-        }else if (!validateEmail(email)) {
+            if (!hasErrors){
+                inputEmail.focus()
+            }
             hasErrors = true
+        }else if (!validateEmail(email)) {
             errorEmail.innerHTML = "Por favor ingrese un e-mail correcto"
-            inputEmail.focus()
+            if (!hasErrors){
+                inputEmail.focus()
+            }
+            hasErrors = true
         }
 
         //Validaciones contraseña
@@ -71,28 +77,34 @@ window.onload = function() {
             cont++;
         }             
         if (spaces) {
-            hasErrors = true
             errorPassword.innerHTML = "La contraseña no puede contener espacios en blanco"
-            inputPassword.focus()
-        }else if (inputPassword.value.length < minPassLength){
+            if (!hasErrors){
+                inputPassword.focus()
+            }
             hasErrors = true
+        }else if (inputPassword.value.length < minPassLength){
             errorPassword.innerHTML = "La contraseña debe contener al menos 8 digitos"
-            inputPassword.focus()
+            if (!hasErrors){
+                inputPassword.focus()
+            }
+            hasErrors = true
         }/* else if (!regularExpression.test(inputPassword)) {
             hasErrors = true
             errorPassword.innerHTML = "La contraseña deberá tener letras mayúsculas, minúsculas, un número y un carácter especial"            
             inputPassword.focus()
         } */
         if (inputPassword.value != inputConfirmPassword.value){
-            hasErrors = true
             errorConfirmPassword.innerHTML = "Las contraseñas no coinciden"            
-            inputPassword.focus()
+            if (!hasErrors){
+                inputConfirmPassword.focus()
+            }
+            hasErrors = true
         }
 
         //Validaciones foto de perfil
         if (!inputProfileImage.value) {
             hasErrors = true
-            errorProfileImage.innerHTML = "Ingrese una imágen para el producto"
+            errorProfileImage.innerHTML = "Ingrese una foto de perfil"
         } else {
             const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i; 
                 if (!allowedExtensions.exec(inputProfileImage.value)) {
