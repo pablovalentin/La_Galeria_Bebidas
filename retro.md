@@ -75,5 +75,18 @@ En general queriamos comentar que nos resulto ameno trabajar juntos.<br>
 * <h3> Dejar de hacer </h3>
   Seguimos contentos con el avanze del proyecto y con como se manejan los cambios en general, no encontramos mucho para comentar en este punto.
 
+      
+ <h1> Retro Sprint 6</h1>
+ 
+* <h3> Comenzar a hacer </h3>
+  Brainstorming para ajustar el front-end del sitio. 
+* <h3> Hacer más </h3>
+  Ajustar el front-end del sitio.
+* <h3> Continuar haciendo </h3>
+  Cambiar código dejando el antiguo comentado (eliminar código obsoleto).
+<h3> Hacer menos </h3>
+  Dejar código obsoleto.
+* <h3> Dejar de hacer </h3>
+  Muy conformes con todo el avance en general, no encontramos mucho para comentar en este punto.
  
 

@@ -39,4 +39,11 @@
 <h3>* Validación y chequeo de modificaciones sugeridas en la weekly previa.</h3>
 <h3>* Pruebas en conjunto del proceso.</h3>
 
+<h1>Weekly 16-08</h1>
+<h3>* Puebas en conjunto del Log in</h3>
 
+<h1>Weekly 21-08</h1>
+<h3>* Se realizo un checkpoint para ver el estado de las tareas asignadas.</h3>
+
+<h1>Weekly 30-08</h1>
+<h3>* Chequeo de validaciones.</h3>
