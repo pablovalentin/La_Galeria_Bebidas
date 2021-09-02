@@ -29,13 +29,15 @@ window.onload = function() {
         return re.test(String(inputEmail).toLowerCase());    
     }    
 
+    function validatePassword(password) {
+        const regularExpression  =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+        return regularExpression.test(password)
+    }
     function validateForm(e) {
-        console.log ("Validar formulario front")
         let hasErrors = false;
         resetErrors()
-
         const email = inputEmail.value
-
+        const password = inputPassword.value
         //Validaciones nombre y apellido
         if (inputName.value.length < minChar){ 
             hasErrors = true
@@ -69,7 +71,6 @@ window.onload = function() {
         //Defino variables para controlar espacios en la contraseña
         let spaces = false;
         let cont = 0;
-        let regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
         while (!spaces && (cont < inputPassword.length)) {
             if (inputPassword.charAt(cont) == " ")
@@ -88,11 +89,11 @@ window.onload = function() {
                 inputPassword.focus()
             }
             hasErrors = true
-        }/* else if (!regularExpression.test(inputPassword)) {
+        } else if (!validatePassword(password)) {
             hasErrors = true
             errorPassword.innerHTML = "La contraseña deberá tener letras mayúsculas, minúsculas, un número y un carácter especial"            
             inputPassword.focus()
-        } */
+        } 
         if (inputPassword.value != inputConfirmPassword.value){
             errorConfirmPassword.innerHTML = "Las contraseñas no coinciden"            
             if (!hasErrors){
@@ -120,7 +121,7 @@ window.onload = function() {
 
 }
 
-console.log(msgErrorsArray)
+
 
 function resetErrors() {
     msgErrorsArray.forEach(msg => {
