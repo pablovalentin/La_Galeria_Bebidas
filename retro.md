@@ -53,7 +53,7 @@ En general queriamos comentar que nos resulto ameno trabajar juntos.<br>
 <h1> Retro Sprint 4</h1>
 
 - <h3> Comenzar a hacer </h3>
-  Comenzar a trabajar sobre la misma rama, al mismo tiempo.
+  Comenzar a trabajar sobre la misma rama, al mismo tiempo..
 - <h3> Hacer más </h3>
   Segiur aprovechando el tiempo de práctica en las clases para pulir detalles y dudas en grupo.
 - <h3> Continuar haciendo </h3>
