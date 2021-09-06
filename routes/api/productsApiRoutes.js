@@ -4,7 +4,7 @@ const productsApiController = require('../../controllers/api/productsApiControll
 
 // endpoints
 productsApiRoutes.get('/', productsApiController.listProducts)
-//productsApiRoutes.get('/:id', productsApiController.detailProduct)
+productsApiRoutes.get('/:id', productsApiController.detailProduct)
 
 
 module.exports = productsApiRoutes
