@@ -4,15 +4,17 @@ const { User} = require ('../../database/models')
 module.exports = {
     async listUsers (req,res) {
         try{
-            const users = await User.findAndCountAll()
-            
+            const users = await User.findAndCountAll({
+                attributes: ["id", "name", "email"],
+            })      
             res.status(200).json({
                 meta: {
                     status: "success",
                     count: users.count
                 },
                 data: {
-                    users: users.rows
+                    users: users.rows,
+                    detail: 'http://localhost:3000/api/users' + users.id
                 }
             })
     } catch(err) {
@@ -44,8 +46,12 @@ module.exports = {
                 status: "success",
             },
             data: {
-                user
+                id: user.id,
+                name: user.name,
+                lastName: user.lastName,
+                email: user.email,
+                image: 'http://localhost:3000' + user.image
             }
+            
         })
-    }
-}
+    }}
