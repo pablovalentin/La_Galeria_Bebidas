@@ -1,20 +1,27 @@
 const { Op } = require('sequelize')
 const { User} = require ('../../database/models')
+const usersController = require('../usersController')
 
 module.exports = {
     async listUsers (req,res) {
         try{
             const users = await User.findAndCountAll({
                 attributes: ["id", "name", "email"],
-            })      
+            })
+            
+            const usersMapped = users.rows.map(users=>{
+                const urlDetail = 'http://localhost:3000/api/users/' + users.id
+                users.setDataValue('detail', urlDetail)
+                return users
+            });
+
             res.status(200).json({
                 meta: {
                     status: "success",
                     count: users.count
                 },
                 data: {
-                    users: users.rows,
-                    detail: 'http://localhost:3000/api/users' + users.id
+                    detail: usersMapped
                 }
             })
     } catch(err) {
