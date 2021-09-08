@@ -3,8 +3,15 @@ const path = require('path');
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const config = require('./config/config')
+const cors = require("cors")
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*"
+  })
+)
 
 const { sessionSecret, cookiesSecret} = require('./config/config')
 
