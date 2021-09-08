@@ -4,6 +4,29 @@ const { Product, Category, Variety} = require ('../../database/models')
 module.exports = {
     async listProducts(req,res) {
         try {
+            const countByCategory = []
+        
+            const categories = await Category.findAll({
+                order: [
+                    ['id', 'ASC'],
+                ],
+            })
+            categories.forEach( async category => {
+                const productsCounted = await Product.findAndCountAll({
+                    where: {
+                        categoryId: category.id
+                    }
+                })
+                const categoryName = category.name
+                const quantity =productsCounted.count
+                const productsForApi = {
+                    categoryName,
+                    quantity
+                }
+                countByCategory.push(productsForApi)
+                
+            })
+            console.log(countByCategory)
             const products = await Product.findAndCountAll({
                 attributes: ["id", "name", "description"],
                 include: [
@@ -11,23 +34,30 @@ module.exports = {
                         association: 'category'
                     }
                 ]
-            }
-            )      
+            })
+            const productUpdated = products.rows.map(product => {
+                const productUrl = 'http://localhost:3000/api/products/' + product.id
+                product.setDataValue('detail', productUrl)
+                product.setDataValue('category', product.category.name)
+                return product;
+            })      
+            
+            
             res.status(200).json({ 
                 meta: {
-                    status: "success"
+                    status: "success",
+                    count: products.count,
+                    countByCategory: countByCategory
                 },
                 data: {
-                    count: products.count,
-                    //countByCategory: ,
-                    products: products.rows
-                    /* products: [{ 
-                        id: product.id
-                    }] */
+                    products: productUpdated
+                    
                 }
             })
     } catch(err){
+        console.log(err)
         res.status(500).json({
+            
             meta: {
                 status: "error"
             },
@@ -39,7 +69,6 @@ module.exports = {
     }   
     } ,
     async detailProduct(req,res){
-        //const product = await Product.findByPk(req.params.id)
         try {
             const product = await Product.findOne({
                 where: {
@@ -73,15 +102,8 @@ module.exports = {
                     price: product.price,
                     quantity: product.quantity,
                     image: 'http://localhost:3000' + product.image,
-                    cateogory: product.category.name,
+                    category: product.category.name,
                     variety: product.variety.name
-                    /* relationships: [
-                                    {
-                                        category: product.category.name,
-                                        variety: product.variety.name
-                                        
-                                    }
-                                ] */
                 }
             })
         } catch(err){
