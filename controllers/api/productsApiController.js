@@ -11,7 +11,6 @@ module.exports = {
                     ['id', 'ASC'],
                 ],
             })
-            console.log('categories ' + categories.length)
             categories.forEach( async category => {
                 const productsCounted = await Product.findAndCountAll({
                     where: {
@@ -28,7 +27,7 @@ module.exports = {
                 
             })
             const products = await Product.findAndCountAll({
-                attributes: ["id", "name", "description"],
+                attributes: ["id", "name", "description", "quantity", "price"],
                 include: [
                     {
                         association: 'category'
