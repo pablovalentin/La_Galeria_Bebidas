@@ -1,6 +1,5 @@
 const { Op } = require('sequelize')
 const { User} = require ('../../database/models')
-const usersController = require('../usersController')
 
 module.exports = {
     async listUsers (req,res) {
@@ -18,6 +17,7 @@ module.exports = {
             res.status(200).json({
                 meta: {
                     status: "success",
+                    title: "Total de usuarios",                    
                     count: users.count
                 },
                 data: {

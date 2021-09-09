@@ -45,9 +45,15 @@ module.exports = {
             res.status(200).json({ 
                 meta: {
                     status: "success",
+                    countByCategory: countByCategory,        
+                },
+                products: {
+                    title: "Total de productos",
                     count: products.count,
-                    categories: categories.length,
-                    countByCategory: countByCategory
+                },
+                categories: {
+                    title: "Total de categorias",
+                    count: categories.length
                 },
                 data: {
                     products: productUpdated
