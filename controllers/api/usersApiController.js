@@ -61,4 +61,34 @@ module.exports = {
             }
             
         })
-    }} 
+    },
+    
+    async updateUserRolID(req, res){
+        const user = await User.findByPk (req.params.id)
+
+        if (!user) {
+            res.status(404).json({
+                meta: {
+                    status: "not_found",
+                },
+            })
+            return
+        }
+
+        const {roleID} = req.body
+
+        const userUpdated = await user.update({
+            roleID,
+        })
+        res.status(201).json({
+            meta: {
+                status: "success",
+            },
+            data: {
+                id: userUpdated.id,
+                roleID: userUpdated.roleID
+                }
+        
+        })
+    }
+} 
