@@ -4,28 +4,18 @@ const { Product, Category, Variety} = require ('../../database/models')
 module.exports = {
     async listProducts(req,res) {
         try {
-            const countByCategory = []
-        
             const categories = await Category.findAll({
                 order: [
                     ['id', 'ASC'],
                 ],
+                include: ['products']
             })
-            categories.forEach( async category => {
-                const productsCounted = await Product.findAndCountAll({
-                    where: {
-                        categoryId: category.id
-                    }
-                })
-                const categoryName = category.name
-                const quantity =productsCounted.count
-                const productsForApi = {
-                    categoryName,
-                    quantity
-                }
-                countByCategory.push(productsForApi)
-                
-            })
+            
+            const countByCategory = categories.reduce((acum, category) => {
+                acum[category.name] = category.products.length
+                return acum
+            }, {})
+
             const products = await Product.findAndCountAll({
                 attributes: ["id", "name", "description", "quantity", "price"],
                 include: [
