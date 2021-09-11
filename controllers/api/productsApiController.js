@@ -29,9 +29,8 @@ module.exports = {
                 product.setDataValue('detail', productUrl)
                 product.setDataValue('category', product.category.name)
                 return product;
-            })      
-            
-            
+            })
+            const lastProduct = productUpdated[productUpdated.length -1];   
             res.status(200).json({ 
                 meta: {
                     status: "success",
@@ -46,7 +45,8 @@ module.exports = {
                     count: categories.length
                 },
                 data: {
-                    products: productUpdated
+                    products: productUpdated,
+                    lastProduct: lastProduct
                     
                 }
             })

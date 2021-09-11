@@ -13,6 +13,7 @@ module.exports = {
                 users.setDataValue('detail', urlDetail)
                 return users
             });
+            const lastUser = usersMapped[usersMapped.length -1];   
 
             res.status(200).json({
                 meta: {
@@ -21,7 +22,9 @@ module.exports = {
                     count: users.count
                 },
                 data: {
-                    detail: usersMapped
+                    detail: usersMapped,
+                    lastUser: lastUser
+
                 }
             })
     } catch(err) {
