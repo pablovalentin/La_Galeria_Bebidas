@@ -17,7 +17,7 @@ module.exports = {
             }, {})
 
             const products = await Product.findAndCountAll({
-                attributes: ["id", "name", "description", "quantity", "price"],
+                attributes: ["id", "name", "description", "quantity", "price", 'image'],
                 include: [
                     {
                         association: 'category'
@@ -28,6 +28,8 @@ module.exports = {
                 const productUrl = 'http://localhost:3000/api/products/' + product.id
                 product.setDataValue('detail', productUrl)
                 product.setDataValue('category', product.category.name)
+                const imageUrl = 'http://localhost:3000' + product.image
+                product.setDataValue('image', imageUrl)
                 return product;
             })
             const lastProduct = productUpdated[productUpdated.length -1];   

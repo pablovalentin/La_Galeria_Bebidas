@@ -4,16 +4,19 @@ const { User} = require ('../../database/models')
 module.exports = {
     async listUsers (req,res) {
         try{
-            const users = await User.findAndCountAll({
-                attributes: ["id", "name", "email"],
-            })
+            const users = await User.findAndCountAll( {
+                attributes: ["id", "name","lastName", "email", "image"],
+            } )
             
-            const usersMapped = users.rows.map(users=>{
-                const urlDetail = 'http://localhost:3000/api/users/' + users.id
-                users.setDataValue('detail', urlDetail)
-                return users
+            const usersMapped = users.rows.map(user=>{
+                const urlDetail = 'http://localhost:3000/api/users/' + user.id
+                user.setDataValue('detail', urlDetail)
+                const imageUrl = 'http://localhost:3000' + user.image
+                user.setDataValue('image', imageUrl)
+                return user
             });
             const lastUser = usersMapped[usersMapped.length -1];   
+
 
             res.status(200).json({
                 meta: {
