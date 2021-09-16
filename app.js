@@ -33,6 +33,7 @@ app.use(sessionToLocals)
 let rutasUsers = require ('./routes/usersRoutes.js')
 let rutasMain = require ('./routes/mainRoutes.js')
 let rutasShoppingCart = require ('./routes/shoppingCartRoutes.js')
+let rutasContact = require ('./routes/contactRoutes.js')
 let rutasProduct = require ('./routes/productRoutes.js')
 const publicPath = path.resolve(__dirname, 'public');
 const method = require('method-override');
@@ -58,6 +59,7 @@ app.use('/user', rutasUsers);
 app.use('/', rutasMain);
 app.use('/carrito', rutasShoppingCart);
 app.use('/producto', rutasProduct);
+app.use('/contacto', rutasContact);
 
 const apiRoutes = require('./routes/api')
 app.use('/api', apiRoutes)

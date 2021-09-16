@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include ('./partials/head.ejs') %> 
+    <link rel="stylesheet" href="/css/registro.css">  
+</head>
+<body>
+    <%- include ('./partials/header.ejs') %>
+    <main>
+      <form action="https://formsubmit.co/pablovalentin09@gmail.com" method="POST" id="register-form" class="register-form" enctype="multipart/form-data">
+        <label><h2>CONTACTANOS!!!</h2> </label>
+        <div class="control-form-register">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" placeholder="Nombre" class="control">
+        </div>
+        <div class="control-form-register">
+          <label for="email">Correo electrónico:</label>
+          <input type="text" name="email" id="email" placeholder="Correo electrónico" class="control" required>
+        </div>
+        <div class="control-form-register">
+          <label for="consulta">Consulta:</label>
+          <textarea type="text" name="name" id="name" cols="47" rows="6" placeholder="Ingresá tu consulta" class="control"></textarea>
+      </div>
+      <button type="submit" class="button-create">ENVIAR</button>
+    </main>
+    <%- include ('./partials/footer.ejs') %>
+</body>
+</html>
