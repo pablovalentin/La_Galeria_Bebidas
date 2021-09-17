@@ -73,7 +73,7 @@ const usersController = {
             password: haspassword,
             image: '/images/profile/' + image,
             //FIXME: ver el tema del role
-            roleID: 1
+            roleID: 2
         }
         
         User.create (user)
